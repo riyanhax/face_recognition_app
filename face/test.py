@@ -36,12 +36,15 @@ while webcam.isOpened():
     if face_location:
         print(face_location)
         display(face_encodings)
-    for (top, right, bottom, left) in face_location:
-        cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+        for (top, right, bottom, left) in face_location:
+            cv2.rectangle(frame, (left, top), (right, bottom), (0, 0, 255), 2)
+        cv2.imwrite(name + str(captured_num) + '.jpg', frame)
+
+
     cv2.imshow(f"captured frames", frame)
     if sample_num == 4:
         captured_num = captured_num + 1
-        cv2.imwrite('/images/img' + str(captured_num) + '.jpg', frame)
+
         sample_num = 0
 
     # press "Q" to stop
