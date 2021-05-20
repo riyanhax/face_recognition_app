@@ -3,7 +3,7 @@
 # 2. 스택오버플로우 우회하기(실패)
 # 3. 크롬 디버깅 모드로 전환
 
-
+# 스택오버플로우 통해서 들어가기(막힘)
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys
 import time 
