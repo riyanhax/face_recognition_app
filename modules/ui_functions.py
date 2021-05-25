@@ -218,7 +218,6 @@ class UIFunctions(MainWindow):
             # IF DOUBLE CLICK CHANGE STATUS
             if event.type() == QEvent.MouseButtonDblClick:
                 QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
-        self.ui.titleRightInfo.mouseDoubleClickEvent = dobleClickMaximizeRestore
 
         if Settings.ENABLE_CUSTOM_TITLE_BAR:
             #STANDARD TITLE BAR
@@ -235,7 +234,6 @@ class UIFunctions(MainWindow):
                     self.move(self.pos() + event.globalPos() - self.dragPos)
                     self.dragPos = event.globalPos()
                     event.accept()
-            self.ui.titleRightInfo.mouseMoveEvent = moveWindow
 
             # CUSTOM GRIPS
             self.left_grip = CustomGrip(self, Qt.LeftEdge, True)
@@ -259,8 +257,6 @@ class UIFunctions(MainWindow):
         self.ui.bgApp.setGraphicsEffect(self.shadow)
 
         # RESIZE WINDOW
-        self.sizegrip = QSizeGrip(self.ui.frame_size_grip)
-        self.sizegrip.setStyleSheet("width: 20px; height: 20px; margin 0px; padding: 0px;")
 
         # MINIMIZE
         self.ui.minimizeAppBtn.clicked.connect(lambda: self.showMinimized())

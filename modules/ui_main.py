@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maineuhHpF.ui'
+## Form generated from reading UI file 'maingmOnAY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -18,7 +18,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1280, 720)
+        MainWindow.resize(1195, 768)
         MainWindow.setMinimumSize(QSize(940, 560))
         self.styleSheet = QWidget(MainWindow)
         self.styleSheet.setObjectName(u"styleSheet")
@@ -562,7 +562,7 @@ class Ui_MainWindow(object):
         self.appLayout.setContentsMargins(0, 0, 0, 0)
         self.leftMenuBg = QFrame(self.bgApp)
         self.leftMenuBg.setObjectName(u"leftMenuBg")
-        self.leftMenuBg.setMinimumSize(QSize(60, 0))
+        self.leftMenuBg.setMinimumSize(QSize(0, 0))
         self.leftMenuBg.setMaximumSize(QSize(60, 16777215))
         self.leftMenuBg.setFrameShape(QFrame.NoFrame)
         self.leftMenuBg.setFrameShadow(QFrame.Raised)
@@ -572,41 +572,26 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.topLogoInfo = QFrame(self.leftMenuBg)
         self.topLogoInfo.setObjectName(u"topLogoInfo")
+        self.topLogoInfo.setEnabled(True)
         self.topLogoInfo.setMinimumSize(QSize(0, 50))
         self.topLogoInfo.setMaximumSize(QSize(16777215, 50))
-        self.topLogoInfo.setFrameShape(QFrame.NoFrame)
-        self.topLogoInfo.setFrameShadow(QFrame.Raised)
-        self.topLogo = QFrame(self.topLogoInfo)
-        self.topLogo.setObjectName(u"topLogo")
-        self.topLogo.setGeometry(QRect(10, 5, 42, 42))
-        self.topLogo.setMinimumSize(QSize(42, 42))
-        self.topLogo.setMaximumSize(QSize(42, 42))
-        self.topLogo.setFrameShape(QFrame.NoFrame)
-        self.topLogo.setFrameShadow(QFrame.Raised)
-        self.titleLeftApp = QLabel(self.topLogoInfo)
-        self.titleLeftApp.setObjectName(u"titleLeftApp")
-        self.titleLeftApp.setGeometry(QRect(70, 8, 160, 20))
         font1 = QFont()
-        font1.setPointSize(12)
+        font1.setFamilies([u"Segoe UI"])
+        font1.setPointSize(10)
         font1.setBold(False)
         font1.setItalic(False)
-        self.titleLeftApp.setFont(font1)
-        self.titleLeftApp.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
-        self.titleLeftDescription = QLabel(self.topLogoInfo)
-        self.titleLeftDescription.setObjectName(u"titleLeftDescription")
-        self.titleLeftDescription.setGeometry(QRect(70, 27, 160, 16))
-        self.titleLeftDescription.setMaximumSize(QSize(16777215, 16))
-        font2 = QFont()
-        font2.setPointSize(8)
-        font2.setBold(False)
-        font2.setItalic(False)
-        self.titleLeftDescription.setFont(font2)
-        self.titleLeftDescription.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
+        self.topLogoInfo.setFont(font1)
+        self.topLogoInfo.setStyleSheet(u"background-color: rgb(124, 135, 166);")
+        self.topLogoInfo.setFrameShape(QFrame.NoFrame)
+        self.topLogoInfo.setFrameShadow(QFrame.Plain)
+        self.topLogoInfo.setLineWidth(0)
 
         self.verticalLayout_3.addWidget(self.topLogoInfo)
 
         self.leftMenuFrame = QFrame(self.leftMenuBg)
         self.leftMenuFrame.setObjectName(u"leftMenuFrame")
+        self.leftMenuFrame.setMinimumSize(QSize(0, 0))
+        self.leftMenuFrame.setStyleSheet(u"background-color: rgb(87, 101, 146);")
         self.leftMenuFrame.setFrameShape(QFrame.NoFrame)
         self.leftMenuFrame.setFrameShadow(QFrame.Raised)
         self.verticalMenuLayout = QVBoxLayout(self.leftMenuFrame)
@@ -615,6 +600,7 @@ class Ui_MainWindow(object):
         self.verticalMenuLayout.setContentsMargins(0, 0, 0, 0)
         self.toggleBox = QFrame(self.leftMenuFrame)
         self.toggleBox.setObjectName(u"toggleBox")
+        self.toggleBox.setMinimumSize(QSize(240, 0))
         self.toggleBox.setMaximumSize(QSize(16777215, 45))
         self.toggleBox.setFrameShape(QFrame.NoFrame)
         self.toggleBox.setFrameShadow(QFrame.Raised)
@@ -629,11 +615,12 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.toggleButton.sizePolicy().hasHeightForWidth())
         self.toggleButton.setSizePolicy(sizePolicy)
-        self.toggleButton.setMinimumSize(QSize(0, 45))
+        self.toggleButton.setMinimumSize(QSize(240, 45))
         self.toggleButton.setFont(font)
         self.toggleButton.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleButton.setLayoutDirection(Qt.LeftToRight)
-        self.toggleButton.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);")
+        self.toggleButton.setStyleSheet(u"background-image: url(:/icons/images/icons/icon_menu.png);\n"
+"background-color: rgb(4, 10, 50);")
 
         self.verticalLayout_4.addWidget(self.toggleButton)
 
@@ -660,18 +647,6 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_home)
 
-        self.btn_widgets = QPushButton(self.topMenu)
-        self.btn_widgets.setObjectName(u"btn_widgets")
-        sizePolicy.setHeightForWidth(self.btn_widgets.sizePolicy().hasHeightForWidth())
-        self.btn_widgets.setSizePolicy(sizePolicy)
-        self.btn_widgets.setMinimumSize(QSize(0, 45))
-        self.btn_widgets.setFont(font)
-        self.btn_widgets.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_widgets.setLayoutDirection(Qt.LeftToRight)
-        self.btn_widgets.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-gamepad.png);")
-
-        self.verticalLayout_8.addWidget(self.btn_widgets)
-
         self.btn_new = QPushButton(self.topMenu)
         self.btn_new.setObjectName(u"btn_new")
         sizePolicy.setHeightForWidth(self.btn_new.sizePolicy().hasHeightForWidth())
@@ -684,35 +659,12 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_8.addWidget(self.btn_new)
 
-        self.btn_save = QPushButton(self.topMenu)
-        self.btn_save.setObjectName(u"btn_save")
-        sizePolicy.setHeightForWidth(self.btn_save.sizePolicy().hasHeightForWidth())
-        self.btn_save.setSizePolicy(sizePolicy)
-        self.btn_save.setMinimumSize(QSize(0, 45))
-        self.btn_save.setFont(font)
-        self.btn_save.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_save.setLayoutDirection(Qt.LeftToRight)
-        self.btn_save.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-save.png)")
-
-        self.verticalLayout_8.addWidget(self.btn_save)
-
-        self.btn_exit = QPushButton(self.topMenu)
-        self.btn_exit.setObjectName(u"btn_exit")
-        sizePolicy.setHeightForWidth(self.btn_exit.sizePolicy().hasHeightForWidth())
-        self.btn_exit.setSizePolicy(sizePolicy)
-        self.btn_exit.setMinimumSize(QSize(0, 45))
-        self.btn_exit.setFont(font)
-        self.btn_exit.setCursor(QCursor(Qt.PointingHandCursor))
-        self.btn_exit.setLayoutDirection(Qt.LeftToRight)
-        self.btn_exit.setStyleSheet(u"background-image: url(:/icons/images/icons/cil-x.png);")
-
-        self.verticalLayout_8.addWidget(self.btn_exit)
-
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
 
         self.bottomMenu = QFrame(self.leftMenuFrame)
         self.bottomMenu.setObjectName(u"bottomMenu")
+        self.bottomMenu.setMinimumSize(QSize(0, 0))
         self.bottomMenu.setFrameShape(QFrame.NoFrame)
         self.bottomMenu.setFrameShadow(QFrame.Raised)
         self.verticalLayout_9 = QVBoxLayout(self.bottomMenu)
@@ -754,6 +706,7 @@ class Ui_MainWindow(object):
         self.extraTopBg.setObjectName(u"extraTopBg")
         self.extraTopBg.setMinimumSize(QSize(0, 50))
         self.extraTopBg.setMaximumSize(QSize(16777215, 50))
+        self.extraTopBg.setAutoFillBackground(False)
         self.extraTopBg.setFrameShape(QFrame.NoFrame)
         self.extraTopBg.setFrameShadow(QFrame.Raised)
         self.verticalLayout_5 = QVBoxLayout(self.extraTopBg)
@@ -886,8 +839,11 @@ class Ui_MainWindow(object):
 
         self.contentBox = QFrame(self.bgApp)
         self.contentBox.setObjectName(u"contentBox")
+        self.contentBox.setStyleSheet(u"\n"
+"background-color: rgb(198, 209, 224);")
         self.contentBox.setFrameShape(QFrame.NoFrame)
         self.contentBox.setFrameShadow(QFrame.Raised)
+        self.contentBox.setLineWidth(0)
         self.verticalLayout_2 = QVBoxLayout(self.contentBox)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -896,41 +852,20 @@ class Ui_MainWindow(object):
         self.contentTopBg.setObjectName(u"contentTopBg")
         self.contentTopBg.setMinimumSize(QSize(0, 50))
         self.contentTopBg.setMaximumSize(QSize(16777215, 50))
+        font2 = QFont()
+        font2.setPointSize(10)
+        font2.setBold(False)
+        font2.setItalic(False)
+        font2.setKerning(True)
+        self.contentTopBg.setFont(font2)
+        self.contentTopBg.setStyleSheet(u"background-color: rgb(124, 135, 166)\n"
+"")
         self.contentTopBg.setFrameShape(QFrame.NoFrame)
         self.contentTopBg.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.contentTopBg)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(0, 0, 10, 0)
-        self.leftBox = QFrame(self.contentTopBg)
-        self.leftBox.setObjectName(u"leftBox")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.leftBox.sizePolicy().hasHeightForWidth())
-        self.leftBox.setSizePolicy(sizePolicy1)
-        self.leftBox.setFrameShape(QFrame.NoFrame)
-        self.leftBox.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_3 = QHBoxLayout(self.leftBox)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.titleRightInfo = QLabel(self.leftBox)
-        self.titleRightInfo.setObjectName(u"titleRightInfo")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
-        sizePolicy2.setHorizontalStretch(0)
-        sizePolicy2.setVerticalStretch(0)
-        sizePolicy2.setHeightForWidth(self.titleRightInfo.sizePolicy().hasHeightForWidth())
-        self.titleRightInfo.setSizePolicy(sizePolicy2)
-        self.titleRightInfo.setMaximumSize(QSize(16777215, 45))
-        self.titleRightInfo.setFont(font)
-        self.titleRightInfo.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.horizontalLayout_3.addWidget(self.titleRightInfo)
-
-
-        self.horizontalLayout.addWidget(self.leftBox)
-
         self.rightButtons = QFrame(self.contentTopBg)
         self.rightButtons.setObjectName(u"rightButtons")
         self.rightButtons.setMinimumSize(QSize(0, 28))
@@ -1000,16 +935,20 @@ class Ui_MainWindow(object):
 
         self.contentBottom = QFrame(self.contentBox)
         self.contentBottom.setObjectName(u"contentBottom")
+        self.contentBottom.setStyleSheet(u"background-color: transparent;")
         self.contentBottom.setFrameShape(QFrame.NoFrame)
         self.contentBottom.setFrameShadow(QFrame.Raised)
+        self.contentBottom.setLineWidth(0)
         self.verticalLayout_6 = QVBoxLayout(self.contentBottom)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
         self.content = QFrame(self.contentBottom)
         self.content.setObjectName(u"content")
+        self.content.setStyleSheet(u"")
         self.content.setFrameShape(QFrame.NoFrame)
         self.content.setFrameShadow(QFrame.Raised)
+        self.content.setLineWidth(0)
         self.horizontalLayout_4 = QHBoxLayout(self.content)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
@@ -1019,29 +958,55 @@ class Ui_MainWindow(object):
         self.pagesContainer.setStyleSheet(u"")
         self.pagesContainer.setFrameShape(QFrame.NoFrame)
         self.pagesContainer.setFrameShadow(QFrame.Raised)
+        self.pagesContainer.setLineWidth(0)
         self.verticalLayout_15 = QVBoxLayout(self.pagesContainer)
         self.verticalLayout_15.setSpacing(0)
         self.verticalLayout_15.setObjectName(u"verticalLayout_15")
         self.verticalLayout_15.setContentsMargins(10, 10, 10, 10)
         self.stackedWidget = QStackedWidget(self.pagesContainer)
         self.stackedWidget.setObjectName(u"stackedWidget")
-        self.stackedWidget.setStyleSheet(u"background: transparent;")
+        self.stackedWidget.setStyleSheet(u"background-color: transparent;")
         self.home = QWidget()
         self.home.setObjectName(u"home")
-        self.home.setStyleSheet(u"")
+        self.home.setAutoFillBackground(False)
+        self.home.setStyleSheet(u"background-color: transparent;")
         self.camLabel = QLabel(self.home)
         self.camLabel.setObjectName(u"camLabel")
-        self.camLabel.setGeometry(QRect(50, 90, 640, 360))
+        self.camLabel.setGeometry(QRect(60, 280, 640, 360))
         self.camLabel.setCursor(QCursor(Qt.SizeHorCursor))
-        self.camLabel.setStyleSheet(u"border-radius: 20%;\n"
+        self.camLabel.setStyleSheet(u"border-radius: 80;\n"
 "border-style: solid;\n"
 "\n"
 "background-color: black; \n"
 "box-shadow: 4px 4px 2px 1px rgba(0, 0, 0, .2);")
+        self.label_2 = QLabel(self.home)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setGeometry(QRect(70, 100, 661, 141))
+        self.label_2.setStyleSheet(u"font: 72pt \"a\ud0c0\uc774\ud2c0\uace0\ub5155\";\n"
+"color: rgb(44, 61, 115);")
+        self.label_3 = QLabel(self.home)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setGeometry(QRect(70, 210, 761, 71))
+        self.label_3.setStyleSheet(u"font: 600 40pt \"Bahnschrift SemiBold SemiConden\";\n"
+"color: rgb(44, 61, 115);\n"
+"")
+        self.label_4 = QLabel(self.home)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setGeometry(QRect(80, 560, 391, 41))
+        self.label_4.setMaximumSize(QSize(16777215, 16777209))
+        self.label_4.setStyleSheet(u"font: 13pt \"a\uc61b\ub0a0\uc0ac\uc9c4\uad003\";\n"
+"color: rgb(41, 57, 108);\n"
+"background-color: rgb(255, 255, 255);\n"
+"text-align:center;\n"
+"border-radius:7;")
+        self.label_4.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_5 = QLabel(self.home)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setGeometry(QRect(90, 570, 21, 21))
         self.stackedWidget.addWidget(self.home)
         self.widgets = QWidget()
         self.widgets.setObjectName(u"widgets")
-        self.widgets.setStyleSheet(u"b")
+        self.widgets.setStyleSheet(u"")
         self.verticalLayout = QVBoxLayout(self.widgets)
         self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -1180,7 +1145,7 @@ class Ui_MainWindow(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 218, 218))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 310, 218))
         self.scrollAreaWidgetContents.setStyleSheet(u" QScrollBar:vertical {\n"
 "	border: none;\n"
 "    background: rgb(52, 59, 72);\n"
@@ -1312,11 +1277,11 @@ class Ui_MainWindow(object):
         __qtablewidgetitem23 = QTableWidgetItem()
         self.tableWidget.setItem(0, 3, __qtablewidgetitem23)
         self.tableWidget.setObjectName(u"tableWidget")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy3)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
+        self.tableWidget.setSizePolicy(sizePolicy1)
         palette = QPalette()
         brush = QBrush(QColor(221, 221, 221, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -1476,47 +1441,10 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.extraRightBox)
 
+        self.pagesContainer.raise_()
+        self.extraRightBox.raise_()
 
         self.verticalLayout_6.addWidget(self.content)
-
-        self.bottomBar = QFrame(self.contentBottom)
-        self.bottomBar.setObjectName(u"bottomBar")
-        self.bottomBar.setMinimumSize(QSize(0, 22))
-        self.bottomBar.setMaximumSize(QSize(16777215, 22))
-        self.bottomBar.setFrameShape(QFrame.NoFrame)
-        self.bottomBar.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_5 = QHBoxLayout(self.bottomBar)
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.creditsLabel = QLabel(self.bottomBar)
-        self.creditsLabel.setObjectName(u"creditsLabel")
-        self.creditsLabel.setMaximumSize(QSize(16777215, 16))
-        font5 = QFont()
-        font5.setBold(False)
-        font5.setItalic(False)
-        self.creditsLabel.setFont(font5)
-        self.creditsLabel.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-
-        self.horizontalLayout_5.addWidget(self.creditsLabel)
-
-        self.version = QLabel(self.bottomBar)
-        self.version.setObjectName(u"version")
-        self.version.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-
-        self.horizontalLayout_5.addWidget(self.version)
-
-        self.frame_size_grip = QFrame(self.bottomBar)
-        self.frame_size_grip.setObjectName(u"frame_size_grip")
-        self.frame_size_grip.setMinimumSize(QSize(20, 0))
-        self.frame_size_grip.setMaximumSize(QSize(20, 16777215))
-        self.frame_size_grip.setFrameShape(QFrame.NoFrame)
-        self.frame_size_grip.setFrameShadow(QFrame.Raised)
-
-        self.horizontalLayout_5.addWidget(self.frame_size_grip)
-
-
-        self.verticalLayout_6.addWidget(self.bottomBar)
 
 
         self.verticalLayout_2.addWidget(self.contentBottom)
@@ -1539,15 +1467,10 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
-        self.titleLeftApp.setText(QCoreApplication.translate("MainWindow", u"PyDracula", None))
-        self.titleLeftDescription.setText(QCoreApplication.translate("MainWindow", u"Modern GUI / Flat Style", None))
-        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"Hide", None))
-        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
-        self.btn_widgets.setText(QCoreApplication.translate("MainWindow", u"Widgets", None))
-        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"New", None))
-        self.btn_save.setText(QCoreApplication.translate("MainWindow", u"Save", None))
-        self.btn_exit.setText(QCoreApplication.translate("MainWindow", u"Exit", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
+        self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"\uba54\ub274", None))
+        self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\ud648", None))
+        self.btn_new.setText(QCoreApplication.translate("MainWindow", u"\ubd81\ub9c8\ud06c", None))
+        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\ub85c\uadf8\uc544\uc6c3", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))
@@ -1570,7 +1493,6 @@ class Ui_MainWindow(object):
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600; color:#ff79c6;\">Convert QRC</span></p>\n"
 "<p align=\"center\" "
                         "style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:9pt; color:#ffffff;\">pyside6-rcc resources.qrc -o resources_rc.py</span></p></body></html>", None))
-        self.titleRightInfo.setText(QCoreApplication.translate("MainWindow", u"PyDracula APP - Theme with colors based on Dracula for Python.", None))
 #if QT_CONFIG(tooltip)
         self.settingsTopBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Settings", None))
 #endif // QT_CONFIG(tooltip)
@@ -1588,6 +1510,10 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.closeAppBtn.setText("")
         self.camLabel.setText("")
+        self.label_2.setText(QCoreApplication.translate("MainWindow", u"FaceLink", None))
+        self.label_3.setText(QCoreApplication.translate("MainWindow", u"Face ID for your convenience.", None))
+        self.label_4.setText(QCoreApplication.translate("MainWindow", u"Please select the face you want to log in.", None))
+        self.label_5.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))
@@ -1658,7 +1584,5 @@ class Ui_MainWindow(object):
         self.btn_message.setText(QCoreApplication.translate("MainWindow", u"Message", None))
         self.btn_print.setText(QCoreApplication.translate("MainWindow", u"Print", None))
         self.btn_logout.setText(QCoreApplication.translate("MainWindow", u"Logout", None))
-        self.creditsLabel.setText(QCoreApplication.translate("MainWindow", u"By: Wanderson M. Pimenta", None))
-        self.version.setText(QCoreApplication.translate("MainWindow", u"v1.0.3", None))
     # retranslateUi
 

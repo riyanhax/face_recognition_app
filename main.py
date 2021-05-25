@@ -58,7 +58,6 @@ class MainWindow(QMainWindow):
         description = "FaceLink - 얼굴인식 자동로그인"
         # APPLY TEXTS
         self.setWindowTitle(title)
-        widgets.titleRightInfo.setText(description)
 
         # TOGGLE MENU
         # ///////////////////////////////////////////////////////////////
@@ -77,9 +76,7 @@ class MainWindow(QMainWindow):
 
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
-        widgets.btn_widgets.clicked.connect(self.buttonClick)
-        widgets.btn_new.clicked.connect(self.buttonClick)
-        widgets.btn_save.clicked.connect(self.buttonClick)
+
 
         # EXTRA LEFT BOX
         def openCloseLeftBox():
