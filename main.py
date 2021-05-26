@@ -205,10 +205,12 @@ class MainWindow(QMainWindow):
             print("started..")
 
         if btnName == "complete":
-            widgets.stackedWidget.setCurrentWidget(widgets.add)
             # user add start
             uname = np.array(selected_encoding)
             np.save(f"./encodings/{widgets.adduserName.text()}", uname)
+            widgets.stackedWidget.setCurrentWidget(widgets.home)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
 
         if btnName == "function_button":
