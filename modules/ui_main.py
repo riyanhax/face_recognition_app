@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'mainkbzTOo.ui'
+## Form generated from reading UI file 'mainJOufbj.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -657,10 +657,10 @@ class Ui_MainWindow(object):
         self.btn_bookmark.setFont(font1)
         self.btn_bookmark.setCursor(QCursor(Qt.PointingHandCursor))
         self.btn_bookmark.setLayoutDirection(Qt.LeftToRight)
-        self.btn_bookmark.setStyleSheet(u"background-image: url(images/images/bookmark.png);\n"
+        self.btn_bookmark.setStyleSheet(u"background-image:url(images/images/bookmark.png);\n"
 "font: 12pt \"a\ud0c0\uc774\ud2c0\uace0\ub5152\";")
 
-        self.verticalLayout_8.addWidget(self.btn_bookmark, 1, Qt.AlignTop)
+        self.verticalLayout_8.addWidget(self.btn_bookmark)
 
 
         self.verticalMenuLayout.addWidget(self.topMenu, 0, Qt.AlignTop)
@@ -682,9 +682,8 @@ class Ui_MainWindow(object):
         self.toggleLeftBox.setFont(font1)
         self.toggleLeftBox.setCursor(QCursor(Qt.PointingHandCursor))
         self.toggleLeftBox.setLayoutDirection(Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet(u"background-image:url(/images/images/path869.png);\n"
-"font: 12pt \"a\ud0c0\uc774\ud2c0\uace0\ub5152\";\n"
-"text-align:center;")
+        self.toggleLeftBox.setStyleSheet(u"background-image:url(images/images/path869.png);\n"
+"font: 12pt \"a\ud0c0\uc774\ud2c0\uace0\ub5152\";")
 
         self.verticalLayout_9.addWidget(self.toggleLeftBox)
 
@@ -1000,25 +999,6 @@ class Ui_MainWindow(object):
         self.label_5.setObjectName(u"label_5")
         self.label_5.setGeometry(QRect(20, 10, 21, 21))
         self.label_5.setStyleSheet(u"border-image: url(images/images/face-recognition.svg);")
-        self.register_button = QWidget(self.home)
-        self.register_button.setObjectName(u"register_button")
-        self.register_button.setGeometry(QRect(460, 330, 131, 61))
-        self.label_12 = QLabel(self.register_button)
-        self.label_12.setObjectName(u"label_12")
-        self.label_12.setGeometry(QRect(20, 20, 21, 21))
-        self.label_12.setStyleSheet(u"border-image: url(images/images/face-recognition.svg)")
-        self.label_8 = QLabel(self.register_button)
-        self.label_8.setObjectName(u"label_8")
-        self.label_8.setGeometry(QRect(10, 10, 111, 41))
-        self.label_8.setMaximumSize(QSize(16777215, 16777209))
-        self.label_8.setStyleSheet(u"font: 13pt \"a\uc61b\ub0a0\uc0ac\uc9c4\uad003\";\n"
-"color: rgb(41, 57, 108);\n"
-"background-color: rgb(255, 255, 255);\n"
-"text-align:center;\n"
-"border-radius:7;")
-        self.label_8.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
-        self.label_8.raise_()
-        self.label_12.raise_()
         self.textBrowser = QTextBrowser(self.home)
         self.textBrowser.setObjectName(u"textBrowser")
         self.textBrowser.setGeometry(QRect(80, 580, 500, 31))
@@ -1026,7 +1006,113 @@ class Ui_MainWindow(object):
         self.textBrowser.setMaximumSize(QSize(500, 200))
         self.textBrowser.setStyleSheet(u"background-color: transparent;")
         self.textBrowser.setFrameShape(QFrame.NoFrame)
+        self.widget_2 = QWidget(self.home)
+        self.widget_2.setObjectName(u"widget_2")
+        self.widget_2.setGeometry(QRect(670, 180, 120, 80))
+        self.slicedPicture = QLabel(self.home)
+        self.slicedPicture.setObjectName(u"slicedPicture")
+        self.slicedPicture.setGeometry(QRect(820, 210, 131, 121))
+        self.selectedId = QLabel(self.home)
+        self.selectedId.setObjectName(u"selectedId")
+        self.selectedId.setGeometry(QRect(810, 350, 151, 21))
+        self.selectedId.setStyleSheet(u"font: 13pt \"a\uc61b\ub0a0\uc0ac\uc9c4\uad003\";\n"
+"color: rgb(41, 57, 108);\n"
+"background-color: rgb(255, 255, 255);\n"
+"text-align:center;\n"
+"border-radius:7;\n"
+"padding: 2;")
+        self.selectedId.setAlignment(Qt.AlignCenter)
+        self.explain_2 = QWidget(self.home)
+        self.explain_2.setObjectName(u"explain_2")
+        self.explain_2.setGeometry(QRect(760, 390, 231, 51))
+        self.function_text = QLabel(self.explain_2)
+        self.function_text.setObjectName(u"function_text")
+        self.function_text.setGeometry(QRect(10, 0, 221, 41))
+        self.function_text.setMaximumSize(QSize(16777215, 16777209))
+        self.function_text.setStyleSheet(u"font: 13pt \"a\uc61b\ub0a0\uc0ac\uc9c4\uad003\";\n"
+"color: rgb(41, 57, 108);\n"
+"background-color: rgb(255, 255, 255);\n"
+"text-align:center;\n"
+"border-radius:7;\n"
+"padding:3;")
+        self.function_text.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_9 = QLabel(self.explain_2)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setGeometry(QRect(20, 10, 21, 21))
+        self.label_9.setStyleSheet(u"border-image: url(images/images/face-recognition.svg);")
+        self.function_button = QPushButton(self.explain_2)
+        self.function_button.setObjectName(u"function_button")
+        self.function_button.setGeometry(QRect(10, 0, 221, 41))
+        self.function_button.setStyleSheet(u"border-color: transparent;")
         self.stackedWidget.addWidget(self.home)
+        self.add = QWidget()
+        self.add.setObjectName(u"add")
+        self.adduser = QWidget(self.add)
+        self.adduser.setObjectName(u"adduser")
+        self.adduser.setGeometry(QRect(-10, -20, 1131, 791))
+        self.adduser.setCursor(QCursor(Qt.ArrowCursor))
+        self.adduser.setStyleSheet(u"background-color: rgba(100, 100, 100, 80)\n"
+"")
+        self.adduser.setInputMethodHints(Qt.ImhDate)
+        self.frame_2 = QFrame(self.adduser)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setGeometry(QRect(250, 160, 391, 391))
+        self.frame_2.setStyleSheet(u"background-color: rgb(213, 213, 213)")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.closeAppBtn_2 = QPushButton(self.frame_2)
+        self.closeAppBtn_2.setObjectName(u"closeAppBtn_2")
+        self.closeAppBtn_2.setGeometry(QRect(360, 0, 28, 28))
+        self.closeAppBtn_2.setMinimumSize(QSize(28, 28))
+        self.closeAppBtn_2.setMaximumSize(QSize(28, 28))
+        self.closeAppBtn_2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.closeAppBtn_2.setToolTipDuration(-1)
+        self.closeAppBtn_2.setStyleSheet(u"border-color:rgb(213, 213, 213)")
+        self.closeAppBtn_2.setIcon(icon)
+        self.closeAppBtn_2.setIconSize(QSize(15, 15))
+        self.frame_3 = QFrame(self.frame_2)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setGeometry(QRect(10, 30, 371, 351))
+        self.frame_3.setStyleSheet(u"background-color: rgb(255, 255, 255);")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.label_10 = QLabel(self.frame_3)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setGeometry(QRect(80, 70, 291, 41))
+        self.label_10.setAutoFillBackground(False)
+        self.label_10.setStyleSheet(u"color: rgb(44, 61, 115);\n"
+"background-color: rgb(255, 255, 255);\n"
+"font: 700 18pt \"\ub098\ub214\uc2a4\ud018\uc5b4_ac Bold\";")
+        self.adduserName = QLineEdit(self.frame_3)
+        self.adduserName.setObjectName(u"adduserName")
+        self.adduserName.setGeometry(QRect(70, 150, 251, 41))
+        self.adduserName.setAutoFillBackground(False)
+        self.adduserName.setStyleSheet(u"background-color: rgb(255, 255, 255);\n"
+"color: rgb(77, 77, 77);\n"
+"font: 11pt \"\ub098\ub214\uc2a4\ud018\uc5b4_ac\";\n"
+"")
+        self.adduserName.setInputMethodHints(Qt.ImhNone)
+        self.adduserName.setEchoMode(QLineEdit.Normal)
+        self.adduserName.setDragEnabled(True)
+        self.adduserName.setClearButtonEnabled(True)
+        self.label_11 = QLabel(self.frame_3)
+        self.label_11.setObjectName(u"label_11")
+        self.label_11.setGeometry(QRect(30, 160, 31, 21))
+        self.label_11.setAutoFillBackground(False)
+        self.label_11.setStyleSheet(u"color: rgb(130, 130, 130);\n"
+"background-color: rgb(255, 255, 255);\n"
+"font: 10pt \"\ub098\ub214\uc2a4\ud018\uc5b4_ac\";")
+        self.complete = QPushButton(self.frame_3)
+        self.complete.setObjectName(u"complete")
+        self.complete.setGeometry(QRect(250, 250, 81, 31))
+        self.complete.setCursor(QCursor(Qt.PointingHandCursor))
+        self.complete.setToolTipDuration(-1)
+        self.complete.setStyleSheet(u"color: rgb(44, 61, 115);\n"
+"font: 700 11pt \"\ub098\ub214\uc2a4\ud018\uc5b4_ac Bold\";\n"
+"background-color: rgb(255, 255, 255);")
+        self.frame_3.raise_()
+        self.closeAppBtn_2.raise_()
+        self.stackedWidget.addWidget(self.add)
         self.bookmark = QWidget()
         self.bookmark.setObjectName(u"bookmark")
         self.bookmark.setStyleSheet(u"")
@@ -1388,7 +1474,7 @@ class Ui_MainWindow(object):
 
         self.extraRightBox = QFrame(self.content)
         self.extraRightBox.setObjectName(u"extraRightBox")
-        self.extraRightBox.setMinimumSize(QSize(300, 0))
+        self.extraRightBox.setMinimumSize(QSize(0, 0))
         self.extraRightBox.setMaximumSize(QSize(0, 16777215))
         self.extraRightBox.setStyleSheet(u"background-color: rgb(4, 10, 50)")
         self.extraRightBox.setFrameShape(QFrame.NoFrame)
@@ -1511,7 +1597,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1562,13 +1648,27 @@ class Ui_MainWindow(object):
         self.label_3.setText(QCoreApplication.translate("MainWindow", u"Face ID for your convenience.", None))
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"\ub85c\uadf8\uc778 \ud560 \uc0ac\uc6a9\uc790\ub97c \uc120\ud0dd\ud574\uc8fc\uc138\uc694. ", None))
         self.label_5.setText("")
-        self.label_12.setText("")
-        self.label_8.setText(QCoreApplication.translate("MainWindow", u"\ud68c\uc6d0\uac00\uc785 ", None))
         self.textBrowser.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'a\uc61b\ub0a0\uc0ac\uc9c4\uad003'; font-size:11pt; color:#000000;\">\ucea0\ud654\uba74\uc5d0 \uc778\uc2dd\ub41c \uc5bc\uad74\uc774\ub098 \ub85c\uadf8\uc778 \uba54\ub274\uc5d0 \ub4f1\ub85d\ub41c \uc774\ub984\uc744 \ud074\ub9ad\ud558\uc138\uc694!</span></p></body></html>", None))
+        self.slicedPicture.setText("")
+        self.selectedId.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.function_text.setText(QCoreApplication.translate("MainWindow", u"\uc5bc\uad74 \uc120\ud0dd\uc774 \ud544\uc694\ud569\ub2c8\ub2e4.", None))
+        self.label_9.setText("")
+        self.function_button.setText("")
+#if QT_CONFIG(tooltip)
+        self.closeAppBtn_2.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
+#endif // QT_CONFIG(tooltip)
+        self.closeAppBtn_2.setText("")
+        self.label_10.setText(QCoreApplication.translate("MainWindow", u"\uc0ac\uc6a9\uc790\ub97c \ub4f1\ub85d\ud574\uc8fc\uc138\uc694", None))
+        self.adduserName.setText("")
+        self.label_11.setText(QCoreApplication.translate("MainWindow", u"\uc774\ub984 :", None))
+#if QT_CONFIG(tooltip)
+        self.complete.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
+#endif // QT_CONFIG(tooltip)
+        self.complete.setText(QCoreApplication.translate("MainWindow", u"\uc644\ub8cc", None))
         self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"FILE BOX", None))
         self.lineEdit.setText("")
         self.lineEdit.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Type here", None))

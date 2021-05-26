@@ -38,6 +38,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
 
+        # QDialog 설정
+        self.dialog = QDialog()
+
         # SET AS GLOBAL WIDGETS
         # ///////////////////////////////////////////////////////////////
         self.ui = Ui_MainWindow()
@@ -45,7 +48,6 @@ class MainWindow(QMainWindow):
         global face_locations
         global face_names
         global widgets
-        global name
         widgets = self.ui
         face_locations = []
         face_names = []
@@ -78,8 +80,12 @@ class MainWindow(QMainWindow):
         # LEFT MENUS
         widgets.btn_home.clicked.connect(self.buttonClick)
         widgets.btn_bookmark.clicked.connect(self.buttonClick)
-        widgets.function_button.clicked.connect(self.buttonClick)
+        widgets.register_button_2.clicked.connect(self.buttonClick)
+        widgets.closeAppBtn_2.clicked.connect(self.buttonClick)
         widgets.complete.clicked.connect(self.buttonClick)
+
+
+
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -130,14 +136,13 @@ class MainWindow(QMainWindow):
         width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
         height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
         widgets.camLabel.resize(width, height)
-        global captured_img
         global face_locations
         global face_names
-        global face_encodings
 
         face_encodings = []
 
         process_this_frame = True
+        global ret, img
         while running:
             ret, img = cap.read()
             small_frame = cv2.resize(img, (0, 0), fx=0.25, fy=0.25)
@@ -145,7 +150,6 @@ class MainWindow(QMainWindow):
             if process_this_frame:
                 last_locations = face_locations.copy()
                 last_names = face_names.copy()
-                last_encodings = face_encodings.copy()
                 face_locations = face_recognition.face_locations(rgb_small_frame)
                 face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
                 face_names = []
@@ -162,9 +166,7 @@ class MainWindow(QMainWindow):
             if not len(face_locations):
                 face_locations = last_locations
                 face_names = last_names
-                face_encodings = last_encodings
             for (top, right, bottom, left), name in zip(face_locations, face_names):
-                captured_img = img
                 # Scale back up face locations since the frame we detected in was scaled to 1/4 size
                 top *= 4
                 right *= 4
@@ -176,14 +178,10 @@ class MainWindow(QMainWindow):
                 cv2.rectangle(img, (left, bottom - 25), (right, bottom), (146, 101, 57), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_SIMPLEX
                 cv2.putText(img, name, (left + 6, bottom-5), font, 0.8, (255, 255, 255), 1)
-            img_converted = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             h, w, c = img.shape
-            qImg = QImage(img_converted.data, w, h, w * c, QImage.Format_RGB888)
+            qImg = QImage(img.data, w, h, w * c, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(qImg)
-
-
-            # draw rounded rect on new pixmap using original pixmap as brush
-
             widgets.camLabel.setPixmap(pixmap)
         cap.release()
 
@@ -204,27 +202,30 @@ class MainWindow(QMainWindow):
             th.start()
             print("started..")
 
-        if btnName == "complete":
-            widgets.stackedWidget.setCurrentWidget(widgets.add)
-            # user add start
-            uname = np.array(selected_encoding)
-            np.save(f"./encodings/{widgets.adduserName.text()}", uname)
-
-
-        if btnName == "function_button":
-            if selected_name == "Unknown":
-                widgets.stackedWidget.setCurrentWidget(widgets.add)
-                UIFunctions.resetStyle(self, btnName)
-                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-            else:
-                widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
-                UIFunctions.resetStyle(self, btnName)
-                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
         # SHOW WIDGETS PAGE
         if btnName == "btn_bookmark":
             widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+        # SHOW WIDGETS PAGE (ADD USERS)
+        if btnName == "register_button_2":
+            widgets.stackedWidget.setCurrentWidget(widgets.add)
+            # user add start
+            uname = widgets.adduserName.text()
+            print("사용자이름"+ uname)
+            uname = np.array(selected_encoding)
+            np.save(f"./encodings/", uname)
+
+        if btnName == "closeAppBtn_2":
+            widgets.stackedWidget.setCurrentWidget(widgets.home)
+
+        if btnName == "complete":
+            #값이 없으면 false 처리 배열을 인자로 안넣어도 되는건가?
+            #값이 있으면 이름으로 파일 저장시키기.
+            widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+
+
 
         # PRINT BTN NAME
         print(f'Button "{btnName}" pressed!')
@@ -242,8 +243,6 @@ class MainWindow(QMainWindow):
         # SET DRAG POS WINDOW
         global face_locations
         global face_names
-        global selected_encoding
-        global selected_name
         self.dragPos = event.globalPos()
         # PRINT MOUSE EVENTS
         if event.buttons() == Qt.LeftButton:
@@ -253,27 +252,13 @@ class MainWindow(QMainWindow):
         if running:
             x = event.x() - widgets.camLabel.x() - widgets.leftMenuBg.width()
             y = event.y() - widgets.camLabel.y() - widgets.contentTopBg.height()
-            for (top, right, bottom, left), name, encoding in zip(face_locations, face_names, face_encodings):
+            for (top, right, bottom, left), name in zip(face_locations, face_names):
                 top *= 4
                 right *= 4
                 bottom *= 4
                 left *= 4
                 if (right >= x >= left) and (bottom >= y >= top):
                     print(name)
-                    selected_name = name
-                    slicedImg = captured_img[top:bottom, left:right]
-                    slicedImg = cv2.cvtColor(slicedImg, cv2.COLOR_BGR2RGB)
-                    h, w, c = slicedImg.shape
-                    qImg = QImage(slicedImg.data, w, h, w * c, QImage.Format_RGB888)
-                    pixmap = QPixmap.fromImage(qImg)
-                    widgets.slicedPicture.setPixmap(pixmap)
-                    widgets.selectedId.setText(QCoreApplication.translate("MainWindow", name, None))
-                    selected_encoding = encoding
-                    if name == "Unknown":
-                        widgets.function_text.setText(QCoreApplication.translate("MainWindow", "회원가입", None))
-                    else:
-                        widgets.function_text.setText(QCoreApplication.translate("MainWindow", "로그인", None))
-
 
 
 if __name__ == "__main__":

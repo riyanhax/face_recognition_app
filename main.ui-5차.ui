@@ -851,7 +851,7 @@ font: 12pt &quot;a타이틀고딕2&quot;;</string>
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image:url(images/images/bookmark.png);
+                   <string notr="true">background-image:url(/images/images/path869.png);
 font: 12pt &quot;a타이틀고딕2&quot;;</string>
                   </property>
                   <property name="text">
@@ -920,7 +920,7 @@ font: 12pt &quot;a타이틀고딕2&quot;;</string>
                    <enum>Qt::LeftToRight</enum>
                   </property>
                   <property name="styleSheet">
-                   <string notr="true">background-image:url(images/images/path869.png);
+                   <string notr="true">background-image:url(/images/images/path869.png);
 font: 12pt &quot;a타이틀고딕2&quot;;</string>
                   </property>
                   <property name="text">
@@ -1085,7 +1085,7 @@ font: 12pt &quot;a타이틀고딕2&quot;;</string>
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset resource="resources.qrc">
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1451,7 +1451,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1494,7 +1494,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1529,7 +1529,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resources.qrc">
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1764,6 +1764,63 @@ border-radius:7;</string>
                         </property>
                        </widget>
                       </widget>
+                      <widget class="QWidget" name="register_button" native="true">
+                       <property name="geometry">
+                        <rect>
+                         <x>460</x>
+                         <y>330</y>
+                         <width>131</width>
+                         <height>61</height>
+                        </rect>
+                       </property>
+                       <widget class="QLabel" name="label_12">
+                        <property name="geometry">
+                         <rect>
+                          <x>20</x>
+                          <y>20</y>
+                          <width>21</width>
+                          <height>21</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border-image: url(images/images/face-recognition.svg)</string>
+                        </property>
+                        <property name="text">
+                         <string/>
+                        </property>
+                       </widget>
+                       <widget class="QLabel" name="label_8">
+                        <property name="geometry">
+                         <rect>
+                          <x>10</x>
+                          <y>10</y>
+                          <width>111</width>
+                          <height>41</height>
+                         </rect>
+                        </property>
+                        <property name="maximumSize">
+                         <size>
+                          <width>16777215</width>
+                          <height>16777209</height>
+                         </size>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">font: 13pt &quot;a옛날사진관3&quot;;
+color: rgb(41, 57, 108);
+background-color: rgb(255, 255, 255);
+text-align:center;
+border-radius:7;</string>
+                        </property>
+                        <property name="text">
+                         <string>회원가입 </string>
+                        </property>
+                        <property name="alignment">
+                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                        </property>
+                       </widget>
+                       <zorder>label_8</zorder>
+                       <zorder>label_12</zorder>
+                      </widget>
                       <widget class="QTextBrowser" name="textBrowser">
                        <property name="geometry">
                         <rect>
@@ -1799,131 +1856,29 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'a옛날사진관3'; font-size:11pt; color:#000000;&quot;&gt;캠화면에 인식된 얼굴이나 로그인 메뉴에 등록된 이름을 클릭하세요!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
-                      <widget class="QWidget" name="widget_2" native="true">
+                      <widget class="QPushButton" name="register_button_2">
                        <property name="geometry">
                         <rect>
-                         <x>670</x>
-                         <y>180</y>
-                         <width>120</width>
-                         <height>80</height>
-                        </rect>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="slicedPicture">
-                       <property name="geometry">
-                        <rect>
-                         <x>820</x>
-                         <y>210</y>
-                         <width>131</width>
-                         <height>121</height>
-                        </rect>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                      </widget>
-                      <widget class="QLabel" name="selectedId">
-                       <property name="geometry">
-                        <rect>
-                         <x>810</x>
-                         <y>350</y>
-                         <width>151</width>
-                         <height>21</height>
+                         <x>680</x>
+                         <y>340</y>
+                         <width>75</width>
+                         <height>24</height>
                         </rect>
                        </property>
                        <property name="styleSheet">
-                        <string notr="true">font: 13pt &quot;a옛날사진관3&quot;;
-color: rgb(41, 57, 108);
-background-color: rgb(255, 255, 255);
-text-align:center;
-border-radius:7;
-padding: 2;</string>
+                        <string notr="true">background-color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);</string>
                        </property>
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>add user</string>
                        </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                      <widget class="QWidget" name="explain_2" native="true">
-                       <property name="geometry">
-                        <rect>
-                         <x>760</x>
-                         <y>390</y>
-                         <width>231</width>
-                         <height>51</height>
-                        </rect>
-                       </property>
-                       <widget class="QLabel" name="function_text">
-                        <property name="geometry">
-                         <rect>
-                          <x>10</x>
-                          <y>0</y>
-                          <width>221</width>
-                          <height>41</height>
-                         </rect>
-                        </property>
-                        <property name="maximumSize">
-                         <size>
-                          <width>16777215</width>
-                          <height>16777209</height>
-                         </size>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">font: 13pt &quot;a옛날사진관3&quot;;
-color: rgb(41, 57, 108);
-background-color: rgb(255, 255, 255);
-text-align:center;
-border-radius:7;
-padding:3;</string>
-                        </property>
-                        <property name="text">
-                         <string>얼굴 선택이 필요합니다.</string>
-                        </property>
-                        <property name="alignment">
-                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                        </property>
-                       </widget>
-                       <widget class="QLabel" name="label_9">
-                        <property name="geometry">
-                         <rect>
-                          <x>20</x>
-                          <y>10</y>
-                          <width>21</width>
-                          <height>21</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border-image: url(images/images/face-recognition.svg);</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
-                       <widget class="QPushButton" name="function_button">
-                        <property name="geometry">
-                         <rect>
-                          <x>10</x>
-                          <y>0</y>
-                          <width>221</width>
-                          <height>41</height>
-                         </rect>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border-color: transparent;</string>
-                        </property>
-                        <property name="text">
-                         <string/>
-                        </property>
-                       </widget>
                       </widget>
                      </widget>
                      <widget class="QWidget" name="add">
                       <widget class="QWidget" name="adduser" native="true">
                        <property name="geometry">
                         <rect>
-                         <x>-10</x>
+                         <x>-70</x>
                          <y>-20</y>
                          <width>1131</width>
                          <height>791</height>
@@ -1994,7 +1949,7 @@ padding:3;</string>
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset resource="resources.qrc">
+                          <iconset resource="../resources.qrc">
                            <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -2022,7 +1977,7 @@ padding:3;</string>
                          <property name="frameShadow">
                           <enum>QFrame::Raised</enum>
                          </property>
-                         <widget class="QLabel" name="label_10">
+                         <widget class="QLabel" name="label_9">
                           <property name="geometry">
                            <rect>
                             <x>80</x>
@@ -2077,7 +2032,7 @@ font: 11pt &quot;나눔스퀘어_ac&quot;;
                            <bool>true</bool>
                           </property>
                          </widget>
-                         <widget class="QLabel" name="label_11">
+                         <widget class="QLabel" name="label_10">
                           <property name="geometry">
                            <rect>
                             <x>30</x>
@@ -2304,7 +2259,7 @@ background-color: rgb(255, 255, 255);</string>
                                      <string>Open</string>
                                     </property>
                                     <property name="icon">
-                                     <iconset resource="resources.qrc">
+                                     <iconset resource="../resources.qrc">
                                       <normaloff>:/icons/images/icons/cil-folder-open.png</normaloff>:/icons/images/icons/cil-folder-open.png</iconset>
                                     </property>
                                    </widget>
@@ -2424,7 +2379,7 @@ background-color: rgb(255, 255, 255);</string>
                                 <rect>
                                  <x>0</x>
                                  <y>0</y>
-                                 <width>302</width>
+                                 <width>218</width>
                                  <height>218</height>
                                 </rect>
                                </property>
@@ -2525,7 +2480,7 @@ background-color: rgb(255, 255, 255);</string>
                                <string>Link Button</string>
                               </property>
                               <property name="icon">
-                               <iconset resource="resources.qrc">
+                               <iconset resource="../resources.qrc">
                                 <normaloff>:/icons/images/icons/cil-link.png</normaloff>:/icons/images/icons/cil-link.png</iconset>
                               </property>
                               <property name="description">
@@ -2992,7 +2947,7 @@ background-color: rgb(255, 255, 255);</string>
                  <widget class="QFrame" name="extraRightBox">
                   <property name="minimumSize">
                    <size>
-                    <width>0</width>
+                    <width>300</width>
                     <height>0</height>
                    </size>
                   </property>
@@ -3263,7 +3218,7 @@ background-color: rgb(255, 255, 255);</string>
   <tabstop>textBrowser</tabstop>
  </tabstops>
  <resources>
-  <include location="resources.qrc"/>
+  <include location="../resources.qrc"/>
  </resources>
  <connections/>
 </ui>
