@@ -1,9 +1,4 @@
 <RCC>
-  <qresource prefix="images">
-    <file>images/images/g121.png</file>
-    <file>images/images/PyDracula.png</file>
-    <file>images/images/PyDracula_vertical.png</file>
-  </qresource>
   <qresource prefix="icons">
     <file>images/icons/cil-3d.png</file>
     <file>images/icons/cil-4k.png</file>
@@ -260,5 +255,22 @@
     <file>images/icons/icon_minimize.png</file>
     <file>images/icons/icon_restore.png</file>
     <file>images/icons/icon_settings.png</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>images/images/bookmark.png</file>
+    <file>images/images/boy.png</file>
+    <file>images/images/boy.svg</file>
+    <file>images/images/boy2.svg</file>
+    <file>images/images/face-recognition.svg</file>
+    <file>images/images/g121 - 복사본.png</file>
+    <file>images/images/g121.png</file>
+    <file>images/images/noun_bookmark_2484342.svg</file>
+    <file>images/images/noun_Home_3367736.svg</file>
+    <file>images/images/noun_Login_3407301.svg</file>
+    <file>images/images/noun_logout_1229802.svg</file>
+    <file>images/images/path869.png</file>
+    <file>images/images/PyDracula.png</file>
+    <file>images/images/PyDracula_horizontal.png</file>
+    <file>images/images/PyDracula_vertical.png</file>
   </qresource>
 </RCC>
