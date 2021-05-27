@@ -124,7 +124,7 @@ class MainWindow(QMainWindow):
         known_face_encodings = [np.load(f"./encodings/{path}") for path in os.listdir("./encodings")]
         known_face_names = [os.path.splitext(path)[0] for path in os.listdir("./encodings")]
         # Initialize some variables
-        cap = cv2.VideoCapture(cv2.CAP_DSHOW)
+        cap = cv2.VideoCapture(1)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
         width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -134,7 +134,7 @@ class MainWindow(QMainWindow):
         global face_locations
         global face_names
         global face_encodings
-
+#
         face_encodings = []
 
         process_this_frame = True
@@ -208,20 +208,18 @@ class MainWindow(QMainWindow):
             # user add start
             uname = np.array(selected_encoding)
             np.save(f"./encodings/{widgets.adduserName.text()}", uname)
-            widgets.stackedWidget.setCurrentWidget(widgets.home)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+            widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+            UIFunctions.resetStyle(self, "btn_bookmark")
+            widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
 
 
         if btnName == "function_button":
             if selected_name == "Unknown":
                 widgets.stackedWidget.setCurrentWidget(widgets.add)
-                UIFunctions.resetStyle(self, btnName)
-                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
             else:
                 widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
-                UIFunctions.resetStyle(self, btnName)
-                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+                UIFunctions.resetStyle(self, "btn_bookmark")
+                widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
         # SHOW WIDGETS PAGE
         if btnName == "btn_bookmark":
             widgets.stackedWidget.setCurrentWidget(widgets.bookmark)

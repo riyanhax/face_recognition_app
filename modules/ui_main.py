@@ -1566,7 +1566,7 @@ class Ui_MainWindow(object):
 
         self.appLayout.addWidget(self.contentBox)
 
-
+#
         self.appMargins.addWidget(self.bgApp)
 
         MainWindow.setCentralWidget(self.styleSheet)
