@@ -346,12 +346,12 @@ class MainWindow(QMainWindow):
             driver.find_element_by_name('email').send_keys(id)
             time.sleep(1)
             driver.find_element_by_name('password').send_keys(pw)
-            time.sleep(1)
             driver.find_element_by_class_name('btn_g').click()
 
         # Instargram
         if url == "https://www.instagram.com/":
             driver.find_element_by_name('username').send_keys(id)
+            time.sleep(1)
             time.sleep(1)
             driver.find_element_by_name('password').send_keys(pw)
             time.sleep(1)
