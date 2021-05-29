@@ -294,10 +294,10 @@ class MainWindow(QMainWindow):
         print(1)
         number = int(btnName[-1])
             # 자동화 로그인 하고 싶은 url 입력.
-        curs.execute(f'SELECT * FROM student WHERE name = {selected_name}{number}')
+        curs.execute(f'SELECT * FROM student WHERE name = "{selected_name}{number}"')
         rows = curs.fetchall()
         if len(rows):
-            for (ID, PW, url) in rows:
+            for (name, ID, PW, url) in rows:
                 self.autologin(ID, PW, url)
         else:
             #팝업으로 아이디 비밀번호 등록 필요!
