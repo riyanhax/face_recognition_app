@@ -314,7 +314,7 @@ class MainWindow(QMainWindow):
         btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
     # AUTO LOGIN EVENTS
-    def autologin(name, ID, PW, url):
+    def autologin(self, ID, PW, url):
         driver = webdriver.Chrome('c:/informs/chromedriver.exe')
         driver.implicitly_wait(3)
 
@@ -340,23 +340,12 @@ class MainWindow(QMainWindow):
         # Daum
         # ty 선택 카카오계정으로 로그인 OR 다음계정으로 로그인
         if url == "https://www.daum.net/":
-            ty = '카카오'
+            driver.get("https://logins.daum.net/accounts/ksso.do?url=https%3A%2F%2Fwww.daum.net%2F")
+            driver.find_element_by_name('email').send_keys(id)
             time.sleep(1)
-            if ty == "카카오":
-                driver.get("https://logins.daum.net/accounts/ksso.do?url=https%3A%2F%2Fwww.daum.net%2F")
-                driver.find_element_by_name('email').send_keys(id)
-                time.sleep(1)
-                driver.find_element_by_name('password').send_keys(pw)
-                time.sleep(1)
-                driver.find_element_by_class_name('btn_g').click()
-
-            elif ty == "다음":
-                driver.get("https://logins.daum.net/accounts/dsso.do?url=https%3A%2F%2Fwww.daum.net%2F")
-                driver.find_element_by_name('id').send_keys(id)
-                time.sleep(1)
-                driver.find_element_by_name('pw').send_keys(pw)
-                time.sleep(1)
-                driver.find_element_by_xpath('//*[@id="loginBtn"]').click()
+            driver.find_element_by_name('password').send_keys(pw)
+            time.sleep(1)
+            driver.find_element_by_class_name('btn_g').click()
 
         # Instargram
         if url == "https://www.instagram.com/":
