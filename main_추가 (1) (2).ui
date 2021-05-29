@@ -1088,7 +1088,7 @@ font: 12pt &quot;a타이틀고딕2&quot;;</string>
                   <string/>
                  </property>
                  <property name="icon">
-                  <iconset>
+                  <iconset resource="../resources.qrc">
                    <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                  </property>
                  <property name="iconSize">
@@ -1454,7 +1454,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset>
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_minimize.png</normaloff>:/icons/images/icons/icon_minimize.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1497,7 +1497,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset>
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_settings.png</normaloff>:/icons/images/icons/icon_settings.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1532,7 +1532,7 @@ background-color: rgb(198, 209, 224);</string>
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset>
+                   <iconset resource="../resources.qrc">
                     <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -1645,7 +1645,7 @@ background-color: rgb(198, 209, 224);</string>
                       <string notr="true">background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>3</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="autoFillBackground">
@@ -2000,7 +2000,7 @@ padding:3;</string>
                           <string/>
                          </property>
                          <property name="icon">
-                          <iconset>
+                          <iconset resource="../resources.qrc">
                            <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
                          </property>
                          <property name="iconSize">
@@ -2288,7 +2288,7 @@ text-align:left;
 font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                                <property name="text">
-                                <string>인스타그램</string>
+                                <string>페이지1 입니다. CBNU</string>
                                </property>
                                <property name="autoRepeatInterval">
                                 <number>0</number>
@@ -2398,7 +2398,7 @@ text-align:left;
 font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                                <property name="text">
-                                <string>블랙보드</string>
+                                <string>페이지1 입니다. CBNU</string>
                                </property>
                                <property name="autoRepeatInterval">
                                 <number>0</number>
@@ -2486,6 +2486,34 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
+                              <widget class="QPushButton" name="pushButton_21">
+                               <property name="geometry">
+                                <rect>
+                                 <x>60</x>
+                                 <y>40</y>
+                                 <width>211</width>
+                                 <height>51</height>
+                                </rect>
+                               </property>
+                               <property name="cursor">
+                                <cursorShape>PointingHandCursor</cursorShape>
+                               </property>
+                               <property name="layoutDirection">
+                                <enum>Qt::LeftToRight</enum>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border-color: transparent;
+color: rgb(29, 29, 29);
+text-align:left;
+font: 12pt &quot;서울남산 장체B&quot;;</string>
+                               </property>
+                               <property name="text">
+                                <string>페이지1 입니다. CBNU</string>
+                               </property>
+                               <property name="autoRepeatInterval">
+                                <number>0</number>
+                               </property>
+                              </widget>
                               <widget class="QPushButton" name="editbutton1">
                                <property name="geometry">
                                 <rect>
@@ -2524,19 +2552,6 @@ color: rgb(13, 13, 13);</string>
                                </property>
                                <property name="text">
                                 <string>삭제</string>
-                               </property>
-                              </widget>
-                              <widget class="QLabel" name="label_8">
-                               <property name="geometry">
-                                <rect>
-                                 <x>80</x>
-                                 <y>60</y>
-                                 <width>43</width>
-                                 <height>14</height>
-                                </rect>
-                               </property>
-                               <property name="text">
-                                <string>TextLabel</string>
                                </property>
                               </widget>
                              </widget>
@@ -2609,7 +2624,7 @@ text-align:left;
 font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                                <property name="text">
-                                <string>다음</string>
+                                <string>페이지1 입니다. CBNU</string>
                                </property>
                                <property name="autoRepeatInterval">
                                 <number>0</number>
@@ -2719,7 +2734,7 @@ text-align:left;
 font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                                <property name="text">
-                                <string>개신누리</string>
+                                <string>페이지1 입니다. CBNU</string>
                                </property>
                                <property name="autoRepeatInterval">
                                 <number>0</number>
@@ -2835,7 +2850,7 @@ text-align:left;
 font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                                <property name="text">
-                                <string>에브리타임</string>
+                                <string>페이지1 입니다. CBNU</string>
                                </property>
                                <property name="autoRepeatInterval">
                                 <number>0</number>
@@ -2889,6 +2904,283 @@ color: rgb(13, 13, 13);</string>
                         </widget>
                        </item>
                       </layout>
+                     </widget>
+                     <widget class="QWidget" name="pageinfo">
+                      <widget class="QWidget" name="chageinfo" native="true">
+                       <property name="geometry">
+                        <rect>
+                         <x>-30</x>
+                         <y>-10</y>
+                         <width>1131</width>
+                         <height>791</height>
+                        </rect>
+                       </property>
+                       <property name="cursor">
+                        <cursorShape>ArrowCursor</cursorShape>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">background-color: rgba(100, 100, 100, 80)
+</string>
+                       </property>
+                       <property name="inputMethodHints">
+                        <set>Qt::ImhDate</set>
+                       </property>
+                       <widget class="QFrame" name="frame_4">
+                        <property name="geometry">
+                         <rect>
+                          <x>390</x>
+                          <y>160</y>
+                          <width>361</width>
+                          <height>391</height>
+                         </rect>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">background-color: rgb(213, 213, 213)</string>
+                        </property>
+                        <property name="frameShape">
+                         <enum>QFrame::StyledPanel</enum>
+                        </property>
+                        <property name="frameShadow">
+                         <enum>QFrame::Raised</enum>
+                        </property>
+                        <widget class="QPushButton" name="closeAppBtn_3">
+                         <property name="geometry">
+                          <rect>
+                           <x>330</x>
+                           <y>0</y>
+                           <width>28</width>
+                           <height>28</height>
+                          </rect>
+                         </property>
+                         <property name="minimumSize">
+                          <size>
+                           <width>28</width>
+                           <height>28</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize">
+                          <size>
+                           <width>28</width>
+                           <height>28</height>
+                          </size>
+                         </property>
+                         <property name="cursor">
+                          <cursorShape>PointingHandCursor</cursorShape>
+                         </property>
+                         <property name="toolTip">
+                          <string>Close</string>
+                         </property>
+                         <property name="toolTipDuration">
+                          <number>-1</number>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">border-color:rgb(213, 213, 213)</string>
+                         </property>
+                         <property name="text">
+                          <string/>
+                         </property>
+                         <property name="icon">
+                          <iconset resource="../resources.qrc">
+                           <normaloff>:/icons/images/icons/icon_close.png</normaloff>:/icons/images/icons/icon_close.png</iconset>
+                         </property>
+                         <property name="iconSize">
+                          <size>
+                           <width>15</width>
+                           <height>15</height>
+                          </size>
+                         </property>
+                        </widget>
+                        <widget class="QFrame" name="frame_5">
+                         <property name="geometry">
+                          <rect>
+                           <x>10</x>
+                           <y>30</y>
+                           <width>341</width>
+                           <height>351</height>
+                          </rect>
+                         </property>
+                         <property name="styleSheet">
+                          <string notr="true">background-color: rgb(255, 255, 255);</string>
+                         </property>
+                         <property name="frameShape">
+                          <enum>QFrame::StyledPanel</enum>
+                         </property>
+                         <property name="frameShadow">
+                          <enum>QFrame::Raised</enum>
+                         </property>
+                         <widget class="QLabel" name="label_12">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>30</y>
+                            <width>291</width>
+                            <height>41</height>
+                           </rect>
+                          </property>
+                          <property name="autoFillBackground">
+                           <bool>false</bool>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(44, 61, 115);
+background-color: rgb(255, 255, 255);
+font: 700 18pt &quot;나눔스퀘어_ac Bold&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>계정 정보 변경</string>
+                          </property>
+                         </widget>
+                         <widget class="QLineEdit" name="adduserName_2">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>120</y>
+                            <width>271</width>
+                            <height>41</height>
+                           </rect>
+                          </property>
+                          <property name="autoFillBackground">
+                           <bool>false</bool>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgb(255, 255, 255);
+font: 11pt &quot;나눔스퀘어_ac&quot;;
+color: rgb(81, 81, 81);
+</string>
+                          </property>
+                          <property name="inputMethodHints">
+                           <set>Qt::ImhNone</set>
+                          </property>
+                          <property name="text">
+                           <string extracomment="Name"/>
+                          </property>
+                          <property name="echoMode">
+                           <enum>QLineEdit::Normal</enum>
+                          </property>
+                          <property name="dragEnabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="placeholderText">
+                           <string>아이디를 입력해주세요.</string>
+                          </property>
+                          <property name="clearButtonEnabled">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="label_13">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>90</y>
+                            <width>41</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="autoFillBackground">
+                           <bool>false</bool>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(130, 130, 130);
+background-color: rgb(255, 255, 255);
+font: 10pt &quot;나눔스퀘어_ac&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>아이디</string>
+                          </property>
+                         </widget>
+                         <widget class="QPushButton" name="complete_2">
+                          <property name="geometry">
+                           <rect>
+                            <x>230</x>
+                            <y>300</y>
+                            <width>81</width>
+                            <height>31</height>
+                           </rect>
+                          </property>
+                          <property name="cursor">
+                           <cursorShape>PointingHandCursor</cursorShape>
+                          </property>
+                          <property name="toolTip">
+                           <string>Close</string>
+                          </property>
+                          <property name="toolTipDuration">
+                           <number>-1</number>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(44, 61, 115);
+font: 700 11pt &quot;나눔스퀘어_ac Bold&quot;;
+background-color: rgb(255, 255, 255);</string>
+                          </property>
+                          <property name="text">
+                           <string>완료</string>
+                          </property>
+                         </widget>
+                         <widget class="QLabel" name="label_14">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>180</y>
+                            <width>51</width>
+                            <height>21</height>
+                           </rect>
+                          </property>
+                          <property name="autoFillBackground">
+                           <bool>false</bool>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(130, 130, 130);
+background-color: rgb(255, 255, 255);
+font: 10pt &quot;나눔스퀘어_ac&quot;;</string>
+                          </property>
+                          <property name="text">
+                           <string>비밀번호</string>
+                          </property>
+                         </widget>
+                         <widget class="QLineEdit" name="adduserName_3">
+                          <property name="geometry">
+                           <rect>
+                            <x>40</x>
+                            <y>210</y>
+                            <width>271</width>
+                            <height>41</height>
+                           </rect>
+                          </property>
+                          <property name="autoFillBackground">
+                           <bool>false</bool>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">background-color: rgb(255, 255, 255);
+font: 11pt &quot;나눔스퀘어_ac&quot;;
+color: rgb(81, 81, 81);
+</string>
+                          </property>
+                          <property name="inputMethodHints">
+                           <set>Qt::ImhNone</set>
+                          </property>
+                          <property name="text">
+                           <string extracomment="Name"/>
+                          </property>
+                          <property name="echoMode">
+                           <enum>QLineEdit::Normal</enum>
+                          </property>
+                          <property name="dragEnabled">
+                           <bool>true</bool>
+                          </property>
+                          <property name="placeholderText">
+                           <string>비밀번호를 입력해주세요.</string>
+                          </property>
+                          <property name="clearButtonEnabled">
+                           <bool>true</bool>
+                          </property>
+                         </widget>
+                         <zorder>label_13</zorder>
+                         <zorder>label_12</zorder>
+                         <zorder>adduserName_2</zorder>
+                         <zorder>complete_2</zorder>
+                         <zorder>label_14</zorder>
+                         <zorder>adduserName_3</zorder>
+                        </widget>
+                       </widget>
+                      </widget>
                      </widget>
                      <widget class="QWidget" name="new_page">
                       <layout class="QVBoxLayout" name="verticalLayout_20">
@@ -3172,6 +3464,8 @@ background-color: rgb(255, 255, 255);</string>
   <tabstop>scrollArea_2</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_추가 (1) (1)yHOCnN.ui'
+## Form generated from reading UI file 'main_추가 (1) (1)EsAFOU.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -1193,16 +1193,6 @@ class Ui_MainWindow(object):
         self.label_16.setObjectName(u"label_16")
         self.label_16.setGeometry(QRect(62, 31, 211, 71))
         self.label_16.setStyleSheet(u"border-image: url(images/images/59-590993_waterfalls-clip-art.png);")
-        self.bookpage3 = QPushButton(self.widget_5)
-        self.bookpage3.setObjectName(u"bookpage3")
-        self.bookpage3.setGeometry(QRect(20, 20, 301, 91))
-        self.bookpage3.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage3.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage3.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage3.setAutoRepeatInterval(0)
 
         self.gridLayout.addWidget(self.widget_5, 1, 2, 1, 1)
 
@@ -1236,21 +1226,10 @@ class Ui_MainWindow(object):
         self.label_8.setObjectName(u"label_8")
         self.label_8.setGeometry(QRect(63, 35, 231, 61))
         self.label_8.setStyleSheet(u"border-image: url(images/images/\uc2dc\uadf8\ub2c8\ucc98 \uc88c\uc6b0\uc870\ud569(\uc815\uc7a51)_\uad6d\ubb38.jpg);")
-        self.bookpage1 = QPushButton(self.widget_4)
-        self.bookpage1.setObjectName(u"bookpage1")
-        self.bookpage1.setGeometry(QRect(30, 20, 311, 91))
-        self.bookpage1.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage1.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage1.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage1.setAutoRepeatInterval(0)
         self.label_18.raise_()
         self.label_8.raise_()
         self.editbutton1.raise_()
         self.delbutton1.raise_()
-        self.bookpage1.raise_()
 
         self.gridLayout.addWidget(self.widget_4, 0, 2, 1, 1, Qt.AlignLeft|Qt.AlignTop)
 
@@ -1285,16 +1264,6 @@ class Ui_MainWindow(object):
         self.label_15.setObjectName(u"label_15")
         self.label_15.setGeometry(QRect(60, 47, 211, 41))
         self.label_15.setStyleSheet(u"border-image:url(images/images/Naver_Logotype.svg);")
-        self.bookpage2 = QPushButton(self.widget_6)
-        self.bookpage2.setObjectName(u"bookpage2")
-        self.bookpage2.setGeometry(QRect(30, 20, 291, 91))
-        self.bookpage2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage2.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage2.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage2.setAutoRepeatInterval(0)
 
         self.gridLayout.addWidget(self.widget_6, 0, 3, 1, 1)
 
@@ -1333,16 +1302,6 @@ class Ui_MainWindow(object):
         self.label_25.setGeometry(QRect(130, 50, 141, 41))
         self.label_25.setStyleSheet(u"font: 24pt \"a\ud0c0\uc774\ud2c0\uace0\ub5154\";\n"
 "color: rgb(198, 41, 23);")
-        self.bookpage6 = QPushButton(self.widget_8)
-        self.bookpage6.setObjectName(u"bookpage6")
-        self.bookpage6.setGeometry(QRect(30, 20, 301, 91))
-        self.bookpage6.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage6.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage6.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage6.setAutoRepeatInterval(0)
 
         self.gridLayout.addWidget(self.widget_8, 2, 3, 1, 1)
 
@@ -1376,16 +1335,6 @@ class Ui_MainWindow(object):
         self.label_17.setObjectName(u"label_17")
         self.label_17.setGeometry(QRect(62, 36, 171, 61))
         self.label_17.setStyleSheet(u"border-image: url(images/images/Daum_communication_logo.svg);")
-        self.bookpage4 = QPushButton(self.widget_9)
-        self.bookpage4.setObjectName(u"bookpage4")
-        self.bookpage4.setGeometry(QRect(30, 20, 291, 91))
-        self.bookpage4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage4.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage4.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage4.setAutoRepeatInterval(0)
 
         self.gridLayout.addWidget(self.widget_9, 1, 3, 1, 1)
 
@@ -1404,6 +1353,13 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
+        self.pushButton_24 = QPushButton(self.widget_7)
+        self.pushButton_24.setObjectName(u"pushButton_24")
+        self.pushButton_24.setGeometry(QRect(58, -43, 241, 221))
+        self.pushButton_24.setCursor(QCursor(Qt.PointingHandCursor))
+        self.pushButton_24.setLayoutDirection(Qt.LeftToRight)
+        self.pushButton_24.setStyleSheet(u"border-image: url(images/images/blackboard-vector-logo.svg);")
+        self.pushButton_24.setAutoRepeatInterval(0)
         self.editbutton1_4 = QPushButton(self.widget_7)
         self.editbutton1_4.setObjectName(u"editbutton1_4")
         self.editbutton1_4.setGeometry(QRect(330, 40, 71, 24))
@@ -1416,25 +1372,6 @@ class Ui_MainWindow(object):
         self.delbutton1_4.setCursor(QCursor(Qt.PointingHandCursor))
         self.delbutton1_4.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.bookpage5 = QPushButton(self.widget_7)
-        self.bookpage5.setObjectName(u"bookpage5")
-        self.bookpage5.setGeometry(QRect(30, 20, 291, 91))
-        self.bookpage5.setCursor(QCursor(Qt.PointingHandCursor))
-        self.bookpage5.setLayoutDirection(Qt.LeftToRight)
-        self.bookpage5.setStyleSheet(u"border-color: transparent;\n"
-"color: rgb(29, 29, 29);\n"
-"text-align:left;\n"
-"font: 12pt \"\uc11c\uc6b8\ub0a8\uc0b0 \uc7a5\uccb4B\";")
-        self.bookpage5.setAutoRepeatInterval(0)
-        self.label_26 = QLabel(self.widget_7)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setGeometry(QRect(60, -78, 251, 281))
-        self.label_26.setStyleSheet(u"border-image: url(images/images/blackboard-vector-logo.svg);")
-        self.label_21.raise_()
-        self.editbutton1_4.raise_()
-        self.delbutton1_4.raise_()
-        self.label_26.raise_()
-        self.bookpage5.raise_()
 
         self.gridLayout.addWidget(self.widget_7, 2, 2, 1, 1)
 
@@ -1523,8 +1460,8 @@ class Ui_MainWindow(object):
 "font: 11pt \"\ub098\ub214\uc2a4\ud018\uc5b4_ac\";\n"
 "color: rgb(81, 81, 81);\n"
 "")
-        self.adduserName_3.setInputMethodHints(Qt.ImhHiddenText|Qt.ImhNoAutoUppercase|Qt.ImhNoPredictiveText|Qt.ImhSensitiveData)
-        self.adduserName_3.setEchoMode(QLineEdit.Password)
+        self.adduserName_3.setInputMethodHints(Qt.ImhNone)
+        self.adduserName_3.setEchoMode(QLineEdit.Normal)
         self.adduserName_3.setDragEnabled(True)
         self.adduserName_3.setClearButtonEnabled(True)
         self.label_13.raise_()
@@ -1665,7 +1602,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1743,33 +1680,27 @@ class Ui_MainWindow(object):
         self.editbutton1_2.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1_2.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_16.setText("")
-        self.bookpage3.setText("")
         self.label_18.setText("")
         self.editbutton1.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_8.setText("")
-        self.bookpage1.setText("")
         self.label_20.setText("")
         self.editbutton1_3.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1_3.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_15.setText("")
-        self.bookpage2.setText("")
         self.label_22.setText("")
         self.editbutton1_5.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1_5.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_24.setText("")
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"\uc5d0\ube0c\ub9ac\ud0c0\uc784", None))
-        self.bookpage6.setText("")
         self.label_23.setText("")
         self.editbutton1_6.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1_6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_17.setText("")
-        self.bookpage4.setText("")
         self.label_21.setText("")
+        self.pushButton_24.setText("")
         self.editbutton1_4.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
         self.delbutton1_4.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
-        self.bookpage5.setText("")
-        self.label_26.setText("")
 #if QT_CONFIG(tooltip)
         self.closeAppBtn_3.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
 #endif // QT_CONFIG(tooltip)

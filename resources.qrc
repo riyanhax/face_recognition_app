@@ -257,6 +257,15 @@
     <file>images/icons/icon_settings.png</file>
   </qresource>
   <qresource prefix="images">
+    <file>images/images/nav.logo.png</file>
+    <file>images/images/delete_black_48dp.svg</file>
+    <file>images/images/edit_black_48dp.svg</file>
+    <file>images/images/59-590993_waterfalls-clip-art.png</file>
+    <file>images/images/blackboard-vector-logo.svg</file>
+    <file>images/images/Daum_communication_logo.svg</file>
+    <file>images/images/ec9790ebb88ceba6aced8380ec9e845feba19ceab3a02e6a7067.jpg</file>
+    <file>images/images/Naver_Logotype.svg</file>
+    <file>images/images/시그니처 좌우조합(정장1)_국문.jpg</file>
     <file>images/images/bookmark.png</file>
     <file>images/images/boy.png</file>
     <file>images/images/boy.svg</file>

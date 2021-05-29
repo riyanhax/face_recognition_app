@@ -13,12 +13,18 @@
 # https://doc.qt.io/qtforpython/licenses.html
 #
 # ///////////////////////////////////////////////////////////////
-
+import sqlite3
 import sys
 import os
 import platform
 import threading
 import cv2
+import pyperclip
+from selenium import webdriver
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
+import time
+
 # IMPORT / GUI AND MODULES AND WIDGETS
 # ///////////////////////////////////////////////////////////////
 import face_recognition
@@ -49,6 +55,7 @@ class MainWindow(QMainWindow):
         widgets = self.ui
         face_locations = []
         face_names = []
+        name = ''
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
@@ -80,6 +87,26 @@ class MainWindow(QMainWindow):
         widgets.btn_bookmark.clicked.connect(self.buttonClick)
         widgets.function_button.clicked.connect(self.buttonClick)
         widgets.complete.clicked.connect(self.buttonClick)
+        widgets.editbutton1.clicked.connect(self.buttonClick)
+        widgets.editbutton1_2.clicked.connect(self.buttonClick)
+        widgets.editbutton1_3.clicked.connect(self.buttonClick)
+        widgets.editbutton1_4.clicked.connect(self.buttonClick)
+        widgets.editbutton1_5.clicked.connect(self.buttonClick)
+        widgets.editbutton1_6.clicked.connect(self.buttonClick)
+        widgets.delbutton1.clicked.connect(self.buttonClick)
+        widgets.delbutton1_2.clicked.connect(self.buttonClick)
+        widgets.delbutton1_3.clicked.connect(self.buttonClick)
+        widgets.delbutton1_4.clicked.connect(self.buttonClick)
+        widgets.delbutton1_5.clicked.connect(self.buttonClick)
+        widgets.delbutton1_6.clicked.connect(self.buttonClick)
+        widgets.bookpage1.clicked.connect(self.link_bookmark)
+        widgets.bookpage2.clicked.connect(self.link_bookmark)
+        widgets.bookpage3.clicked.connect(self.link_bookmark)
+        widgets.bookpage4.clicked.connect(self.link_bookmark)
+        widgets.bookpage5.clicked.connect(self.link_bookmark)
+        widgets.bookpage6.clicked.connect(self.link_bookmark)
+        widgets.complete_2.clicked.connect(self.edit_bookmark)
+
         # EXTRA LEFT BOX
         def openCloseLeftBox():
             UIFunctions.toggleLeftBox(self, True)
@@ -124,7 +151,7 @@ class MainWindow(QMainWindow):
         known_face_encodings = [np.load(f"./encodings/{path}") for path in os.listdir("./encodings")]
         known_face_names = [os.path.splitext(path)[0] for path in os.listdir("./encodings")]
         # Initialize some variables
-        cap = cv2.VideoCapture(1)
+        cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
         width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -190,9 +217,14 @@ class MainWindow(QMainWindow):
     def buttonClick(self):
         # GET BUTTON CLICKED
         global running
-        running= False
+        running = False
         btn = self.sender()
         btnName = btn.objectName()
+        global btnNumber
+        try:
+            number = int(btnName[-1])
+        except:
+            number = 0
 
         # SHOW HOME PAGE
         if btnName == "btn_home":
@@ -204,30 +236,163 @@ class MainWindow(QMainWindow):
             th.start()
             print("started..")
 
-        if btnName == "complete":
+        elif btnName == "complete":
             # user add start
             uname = np.array(selected_encoding)
             np.save(f"./encodings/{widgets.adduserName.text()}", uname)
+            ins = 'INSERT INTO student (name, ID, PW, url) VALUES(?, ?, ?, ?)'
+            for i, url in zip(range(1,7),
+                             [
+                              'https://eis.cbnu.ac.kr/cbnuLogin',
+                              'https://www.naver.com/',
+                              'https://www.instagram.com/',
+                              'https://www.daum.net/',
+                              'https://cbnu.blackboard.com/',
+                              'https://everytime.kr/'
+                              ]):
+                curs.execute(ins, (widgets.adduserName.text()+str(i), '', '', url))
+            conn.commit()
+
+            print('데이터가 저장되었습니다.')
             widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
             UIFunctions.resetStyle(self, "btn_bookmark")
             widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
 
-
-        if btnName == "function_button":
+        elif btnName == "function_button":
             if selected_name == "Unknown":
                 widgets.stackedWidget.setCurrentWidget(widgets.add)
             else:
                 widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
                 UIFunctions.resetStyle(self, "btn_bookmark")
                 widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
+        elif btnName.find('edit') != -1:
+            btnNumber = number
+            widgets.stackedWidget.setCurrentWidget(widgets.pageinfo)
+            UIFunctions.resetStyle(self, btnName)
+        elif btnName.find('del') != -1:
+            ins = f'SELECT * FROM student WHERE name = {name}{number}'
+            curs.execute(ins)
+            rows = curs.fetchall()
+            if rows:
+                ins = f'DELETE FROM student WHERE name = {name}{number}'
+                curs.execute(ins)
+                #팝업창print("삭제하였습니다.")
+            else:
+                pass
+                #팝업창print("해당 학번의 학생은 존재하지 않습니다.")
+            conn.commit()
         # SHOW WIDGETS PAGE
-        if btnName == "btn_bookmark":
+        elif btnName == "btn_bookmark":
             widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
-        # PRINT BTN NAME
-        print(f'Button "{btnName}" pressed!')
+        # AUTO LOGIN
+    def link_bookmark(self):
+        btn = self.sender()
+        btnName = btn.objectName()
+        number = int(btnName[-1])
+            # 자동화 로그인 하고 싶은 url 입력.
+        curs.execute(f'SELECT * FROM student WHERE name = {name}{number}')
+        rows = curs.fetchall()
+        if len(rows):
+            for (ID, PW, url) in rows:
+                self.autologin(ID, PW, url)
+        else:
+            #팝업으로 아이디 비밀번호 등록 필요!
+            pass
+
+    def edit_bookmark(self):
+        btn = self.sender()
+        btnName = btn.objectName()
+        number = int(btnName[-1])
+        ins = f'UPDATE student SET ID="{widgets.adduserName_2.text()}", PW="{widgets.adduserName_3.text()}" WHERE name = "{name}{btnNumber}"'
+        curs.execute(ins)
+        conn.commit()
+        widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+        UIFunctions.resetStyle(self, btnName)
+        btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+
+    # AUTO LOGIN EVENTS
+    def autologin(name, ID, PW, url):
+        driver = webdriver.Chrome('c:/informs/chromedriver.exe')
+        driver.implicitly_wait(3)
+
+        driver.get(url)
+        id = ID
+        pw = PW
+        # CBNU Blackboard
+        if url == "https://cbnu.blackboard.com/":
+            driver.find_element_by_name('uid').send_keys(id)
+            time.sleep(1)
+            driver.find_element_by_name('pswd').send_keys(pw)
+            time.sleep(1)
+            driver.find_element_by_xpath('//*[@id="entry-login"]').click()
+
+        # CBNU 개신누리
+        if url == "https://eis.cbnu.ac.kr/cbnuLogin":
+            time.sleep(1)
+            driver.find_element_by_name('uid').send_keys(id)
+            time.sleep(1)
+            driver.find_element_by_name('pswd').send_keys(pw)
+            time.sleep(1)
+            driver.find_element_by_xpath('//*[@id="commonLoginBtn"]').click()
+        # Daum
+        # ty 선택 카카오계정으로 로그인 OR 다음계정으로 로그인
+        if url == "https://www.daum.net/":
+            ty = '카카오'
+            time.sleep(1)
+            if ty == "카카오":
+                driver.get("https://logins.daum.net/accounts/ksso.do?url=https%3A%2F%2Fwww.daum.net%2F")
+                driver.find_element_by_name('email').send_keys(id)
+                time.sleep(1)
+                driver.find_element_by_name('password').send_keys(pw)
+                time.sleep(1)
+                driver.find_element_by_class_name('btn_g').click()
+
+            elif ty == "다음":
+                driver.get("https://logins.daum.net/accounts/dsso.do?url=https%3A%2F%2Fwww.daum.net%2F")
+                driver.find_element_by_name('id').send_keys(id)
+                time.sleep(1)
+                driver.find_element_by_name('pw').send_keys(pw)
+                time.sleep(1)
+                driver.find_element_by_xpath('//*[@id="loginBtn"]').click()
+
+        # Instargram
+        if url == "https://www.instagram.com/":
+            driver.find_element_by_name('username').send_keys(id)
+            time.sleep(1)
+            driver.find_element_by_name('password').send_keys(pw)
+            time.sleep(1)
+            driver.find_element_by_class_name('Igw0E').click()
+
+        # Naver
+        if url == "https://www.naver.com/":
+            time.sleep(1)
+            driver.get('https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com')
+            # 아이디 입력폼
+            tag_id = driver.find_element_by_name('id')
+            tag_pw = driver.find_element_by_name('pw')
+            tag_id.click()
+            pyperclip.copy(id)
+            tag_id.send_keys(Keys.CONTROL, 'v')
+            time.sleep(1)
+            tag_pw.click()
+            pyperclip.copy(pw)
+            tag_pw.send_keys(Keys.CONTROL, 'v')
+            time.sleep(1)
+            driver.find_element_by_id('log.login').click()
+            time.sleep(2)
+
+        # Everytime
+        if url == "https://everytime.kr/":
+            time.sleep(1)
+            driver.get("https://everytime.kr/login")
+            driver.find_element_by_name('userid').send_keys(id)
+            time.sleep(1)
+            driver.find_element_by_name('password').send_keys(pw)
+            time.sleep(1)
+            driver.find_element_by_class_name('submit').click()
 
 
     # RESIZE EVENTS
@@ -277,7 +442,13 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    app.setWindowIcon(QIcon("icon.ico"))
-    window = MainWindow()
-    sys.exit(app.exec())
+    with sqlite3.connect('school.db') as conn:
+        curs = conn.cursor()
+        curs.execute('''CREATE TABLE IF NOT EXISTS student
+            (name VARCHAR(20) PRIMARY KEY, ID VARCHAR(20), PW VARCHAR(20), url VARCHAR(100))''')
+        app = QApplication(sys.argv)
+        app.setWindowIcon(QIcon("icon.ico"))
+        window = MainWindow()
+        sys.exit(app.exec())
+        conn.commit()
+        conn.close()
