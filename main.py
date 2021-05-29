@@ -51,11 +51,11 @@ class MainWindow(QMainWindow):
         global face_locations
         global face_names
         global widgets
-        global name
+        global selected_name
         widgets = self.ui
         face_locations = []
         face_names = []
-        name = ''
+        selected_name = ''
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
         # ///////////////////////////////////////////////////////////////
         Settings.ENABLE_CUSTOM_TITLE_BAR = True
@@ -270,11 +270,11 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.pageinfo)
             UIFunctions.resetStyle(self, btnName)
         elif btnName.find('del') != -1:
-            ins = f'SELECT * FROM student WHERE name = {name}{number}'
+            ins = f'SELECT * FROM student WHERE name = {selected_name}{number}'
             curs.execute(ins)
             rows = curs.fetchall()
             if rows:
-                ins = f'DELETE FROM student WHERE name = {name}{number}'
+                ins = f'DELETE FROM student WHERE name = {selected_name}{number}'
                 curs.execute(ins)
                 #팝업창print("삭제하였습니다.")
             else:
@@ -291,9 +291,10 @@ class MainWindow(QMainWindow):
     def link_bookmark(self):
         btn = self.sender()
         btnName = btn.objectName()
+        print(1)
         number = int(btnName[-1])
             # 자동화 로그인 하고 싶은 url 입력.
-        curs.execute(f'SELECT * FROM student WHERE name = {name}{number}')
+        curs.execute(f'SELECT * FROM student WHERE name = {selected_name}{number}')
         rows = curs.fetchall()
         if len(rows):
             for (ID, PW, url) in rows:
@@ -306,7 +307,8 @@ class MainWindow(QMainWindow):
         btn = self.sender()
         btnName = btn.objectName()
         number = int(btnName[-1])
-        ins = f'UPDATE student SET ID="{widgets.adduserName_2.text()}", PW="{widgets.adduserName_3.text()}" WHERE name = "{name}{btnNumber}"'
+        print(selected_name+str(btnNumber))
+        ins = f'UPDATE student SET ID="{widgets.adduserName_2.text()}", PW="{widgets.adduserName_3.text()}" WHERE name = "{selected_name}{str(btnNumber)}"'
         curs.execute(ins)
         conn.commit()
         widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
