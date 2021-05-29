@@ -88,17 +88,17 @@ class MainWindow(QMainWindow):
         widgets.function_button.clicked.connect(self.buttonClick)
         widgets.complete.clicked.connect(self.buttonClick)
         widgets.editbutton1.clicked.connect(self.buttonClick)
-        widgets.editbutton1_2.clicked.connect(self.buttonClick)
-        widgets.editbutton1_3.clicked.connect(self.buttonClick)
-        widgets.editbutton1_4.clicked.connect(self.buttonClick)
-        widgets.editbutton1_5.clicked.connect(self.buttonClick)
-        widgets.editbutton1_6.clicked.connect(self.buttonClick)
+        widgets.editbutton2.clicked.connect(self.buttonClick)
+        widgets.editbutton3.clicked.connect(self.buttonClick)
+        widgets.editbutton4.clicked.connect(self.buttonClick)
+        widgets.editbutton5.clicked.connect(self.buttonClick)
+        widgets.editbutton6.clicked.connect(self.buttonClick)
         widgets.delbutton1.clicked.connect(self.buttonClick)
-        widgets.delbutton1_2.clicked.connect(self.buttonClick)
-        widgets.delbutton1_3.clicked.connect(self.buttonClick)
-        widgets.delbutton1_4.clicked.connect(self.buttonClick)
-        widgets.delbutton1_5.clicked.connect(self.buttonClick)
-        widgets.delbutton1_6.clicked.connect(self.buttonClick)
+        widgets.delbutton2.clicked.connect(self.buttonClick)
+        widgets.delbutton3.clicked.connect(self.buttonClick)
+        widgets.delbutton4.clicked.connect(self.buttonClick)
+        widgets.delbutton5.clicked.connect(self.buttonClick)
+        widgets.delbutton6.clicked.connect(self.buttonClick)
         widgets.bookpage1.clicked.connect(self.link_bookmark)
         widgets.bookpage2.clicked.connect(self.link_bookmark)
         widgets.bookpage3.clicked.connect(self.link_bookmark)
@@ -267,6 +267,7 @@ class MainWindow(QMainWindow):
                 widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
         elif btnName.find('edit') != -1:
             btnNumber = number
+            print(btnNumber)
             widgets.stackedWidget.setCurrentWidget(widgets.pageinfo)
             UIFunctions.resetStyle(self, btnName)
         elif btnName.find('del') != -1:
@@ -276,14 +277,16 @@ class MainWindow(QMainWindow):
             if rows:
                 ins = f'DELETE FROM student WHERE name = {selected_name}{number}'
                 curs.execute(ins)
-                #팝업창print("삭제하였습니다.")
+                QMessageBox.about(self, "성공!", "삭제하였습니다.")
             else:
-                pass
-                #팝업창print("해당 학번의 학생은 존재하지 않습니다.")
+                QMessageBox.about(self, "실패!", "존재하지 않는 정보입니다/")
             conn.commit()
         # SHOW WIDGETS PAGE
         elif btnName == "btn_bookmark":
-            widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+            if selected_name == '':
+                QMessageBox.about(self, "실패!", "로그인이 필요합니다.")
+            else:
+                widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
 
@@ -291,29 +294,32 @@ class MainWindow(QMainWindow):
     def link_bookmark(self):
         btn = self.sender()
         btnName = btn.objectName()
-        print(1)
         number = int(btnName[-1])
             # 자동화 로그인 하고 싶은 url 입력.
         curs.execute(f'SELECT * FROM student WHERE name = "{selected_name}{number}"')
         rows = curs.fetchall()
-        if len(rows):
-            for (name, ID, PW, url) in rows:
-                self.autologin(ID, PW, url)
-        else:
-            #팝업으로 아이디 비밀번호 등록 필요!
-            pass
+        try:
+            if len(rows[0][1]):
+                for (name, ID, PW, url) in rows:
+                    self.autologin(ID, PW, url)
+        except:
+            QMessageBox.about(self, "오류!", "수정 버튼을 눌러 등록해주세요!")
 
     def edit_bookmark(self):
         btn = self.sender()
         btnName = btn.objectName()
-        number = int(btnName[-1])
         print(selected_name+str(btnNumber))
-        ins = f'UPDATE student SET ID="{widgets.adduserName_2.text()}", PW="{widgets.adduserName_3.text()}" WHERE name = "{selected_name}{str(btnNumber)}"'
-        curs.execute(ins)
-        conn.commit()
-        widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
-        UIFunctions.resetStyle(self, btnName)
-        btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+        if len(widgets.adduserName_2.text()) and len(widgets.adduserName_3.text()):
+            ins = f'UPDATE student SET ID="{widgets.adduserName_2.text()}", PW="{widgets.adduserName_3.text()}" WHERE name = "{selected_name}{str(btnNumber)}"'
+            curs.execute(ins)
+            conn.commit()
+            widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+            UIFunctions.resetStyle(self, btnName)
+            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+        else:
+            QMessageBox.about(self, "오류!", "빈칸 없이 작성해주세요!")
+
+
 
     # AUTO LOGIN EVENTS
     def autologin(self, ID, PW, url):

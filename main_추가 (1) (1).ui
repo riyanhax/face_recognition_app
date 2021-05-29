@@ -1648,7 +1648,7 @@ background-color: rgb(198, 209, 224);</string>
                       <string notr="true">background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>3</number>
+                      <number>2</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="autoFillBackground">
@@ -2273,7 +2273,7 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="editbutton1_2">
+                              <widget class="QPushButton" name="editbutton3">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2293,7 +2293,7 @@ color: rgb(255, 255, 255);
                                 <string>수정</string>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="delbutton1_2">
+                              <widget class="QPushButton" name="delbutton3">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2536,7 +2536,7 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="editbutton1_3">
+                              <widget class="QPushButton" name="editbutton2">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2556,7 +2556,7 @@ color: rgb(255, 255, 255);
                                 <string>수정</string>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="delbutton1_3">
+                              <widget class="QPushButton" name="delbutton2">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2662,7 +2662,7 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="editbutton1_5">
+                              <widget class="QPushButton" name="editbutton6">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2682,7 +2682,7 @@ color: rgb(255, 255, 255);
                                 <string>수정</string>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="delbutton1_5">
+                              <widget class="QPushButton" name="delbutton6">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2805,7 +2805,7 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="editbutton1_6">
+                              <widget class="QPushButton" name="editbutton4">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2825,7 +2825,7 @@ color: rgb(255, 255, 255);
                                 <string>수정</string>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="delbutton1_6">
+                              <widget class="QPushButton" name="delbutton4">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2937,7 +2937,7 @@ color: rgb(255, 255, 255);
                                 <string/>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="editbutton1_4">
+                              <widget class="QPushButton" name="editbutton5">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -2957,7 +2957,7 @@ color: rgb(255, 255, 255);
                                 <string>수정</string>
                                </property>
                               </widget>
-                              <widget class="QPushButton" name="delbutton1_4">
+                              <widget class="QPushButton" name="delbutton5">
                                <property name="geometry">
                                 <rect>
                                  <x>330</x>
@@ -3022,8 +3022,8 @@ font: 12pt &quot;서울남산 장체B&quot;;</string>
                                </property>
                               </widget>
                               <zorder>label_21</zorder>
-                              <zorder>editbutton1_4</zorder>
-                              <zorder>delbutton1_4</zorder>
+                              <zorder>editbutton5</zorder>
+                              <zorder>delbutton5</zorder>
                               <zorder>label_26</zorder>
                               <zorder>bookpage5</zorder>
                              </widget>

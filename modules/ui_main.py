@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_추가 (1) (1)yHOCnN.ui'
+## Form generated from reading UI file 'main_추가 (1) (1)YAOgdn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -1177,17 +1177,17 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
-        self.editbutton1_2 = QPushButton(self.widget_5)
-        self.editbutton1_2.setObjectName(u"editbutton1_2")
-        self.editbutton1_2.setGeometry(QRect(330, 40, 71, 24))
-        self.editbutton1_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.editbutton1_2.setStyleSheet(u"border-color: transparent;\n"
+        self.editbutton3 = QPushButton(self.widget_5)
+        self.editbutton3.setObjectName(u"editbutton3")
+        self.editbutton3.setGeometry(QRect(330, 40, 71, 24))
+        self.editbutton3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.editbutton3.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.delbutton1_2 = QPushButton(self.widget_5)
-        self.delbutton1_2.setObjectName(u"delbutton1_2")
-        self.delbutton1_2.setGeometry(QRect(330, 70, 71, 24))
-        self.delbutton1_2.setCursor(QCursor(Qt.PointingHandCursor))
-        self.delbutton1_2.setStyleSheet(u"border-color: transparent;\n"
+        self.delbutton3 = QPushButton(self.widget_5)
+        self.delbutton3.setObjectName(u"delbutton3")
+        self.delbutton3.setGeometry(QRect(330, 70, 71, 24))
+        self.delbutton3.setCursor(QCursor(Qt.PointingHandCursor))
+        self.delbutton3.setStyleSheet(u"border-color: transparent;\n"
 "")
         self.label_16 = QLabel(self.widget_5)
         self.label_16.setObjectName(u"label_16")
@@ -1269,17 +1269,17 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
-        self.editbutton1_3 = QPushButton(self.widget_6)
-        self.editbutton1_3.setObjectName(u"editbutton1_3")
-        self.editbutton1_3.setGeometry(QRect(330, 40, 71, 24))
-        self.editbutton1_3.setCursor(QCursor(Qt.PointingHandCursor))
-        self.editbutton1_3.setStyleSheet(u"border-color: transparent;\n"
+        self.editbutton2 = QPushButton(self.widget_6)
+        self.editbutton2.setObjectName(u"editbutton2")
+        self.editbutton2.setGeometry(QRect(330, 40, 71, 24))
+        self.editbutton2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.editbutton2.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.delbutton1_3 = QPushButton(self.widget_6)
-        self.delbutton1_3.setObjectName(u"delbutton1_3")
-        self.delbutton1_3.setGeometry(QRect(330, 70, 71, 24))
-        self.delbutton1_3.setCursor(QCursor(Qt.PointingHandCursor))
-        self.delbutton1_3.setStyleSheet(u"border-color: transparent;\n"
+        self.delbutton2 = QPushButton(self.widget_6)
+        self.delbutton2.setObjectName(u"delbutton2")
+        self.delbutton2.setGeometry(QRect(330, 70, 71, 24))
+        self.delbutton2.setCursor(QCursor(Qt.PointingHandCursor))
+        self.delbutton2.setStyleSheet(u"border-color: transparent;\n"
 "")
         self.label_15 = QLabel(self.widget_6)
         self.label_15.setObjectName(u"label_15")
@@ -1312,17 +1312,17 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
-        self.editbutton1_5 = QPushButton(self.widget_8)
-        self.editbutton1_5.setObjectName(u"editbutton1_5")
-        self.editbutton1_5.setGeometry(QRect(330, 40, 71, 24))
-        self.editbutton1_5.setCursor(QCursor(Qt.PointingHandCursor))
-        self.editbutton1_5.setStyleSheet(u"border-color: transparent;\n"
+        self.editbutton6 = QPushButton(self.widget_8)
+        self.editbutton6.setObjectName(u"editbutton6")
+        self.editbutton6.setGeometry(QRect(330, 40, 71, 24))
+        self.editbutton6.setCursor(QCursor(Qt.PointingHandCursor))
+        self.editbutton6.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.delbutton1_5 = QPushButton(self.widget_8)
-        self.delbutton1_5.setObjectName(u"delbutton1_5")
-        self.delbutton1_5.setGeometry(QRect(330, 70, 71, 24))
-        self.delbutton1_5.setCursor(QCursor(Qt.PointingHandCursor))
-        self.delbutton1_5.setStyleSheet(u"border-color: transparent;\n"
+        self.delbutton6 = QPushButton(self.widget_8)
+        self.delbutton6.setObjectName(u"delbutton6")
+        self.delbutton6.setGeometry(QRect(330, 70, 71, 24))
+        self.delbutton6.setCursor(QCursor(Qt.PointingHandCursor))
+        self.delbutton6.setStyleSheet(u"border-color: transparent;\n"
 "")
         self.label_24 = QLabel(self.widget_8)
         self.label_24.setObjectName(u"label_24")
@@ -1360,17 +1360,17 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
-        self.editbutton1_6 = QPushButton(self.widget_9)
-        self.editbutton1_6.setObjectName(u"editbutton1_6")
-        self.editbutton1_6.setGeometry(QRect(330, 40, 71, 24))
-        self.editbutton1_6.setCursor(QCursor(Qt.PointingHandCursor))
-        self.editbutton1_6.setStyleSheet(u"border-color: transparent;\n"
+        self.editbutton4 = QPushButton(self.widget_9)
+        self.editbutton4.setObjectName(u"editbutton4")
+        self.editbutton4.setGeometry(QRect(330, 40, 71, 24))
+        self.editbutton4.setCursor(QCursor(Qt.PointingHandCursor))
+        self.editbutton4.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.delbutton1_6 = QPushButton(self.widget_9)
-        self.delbutton1_6.setObjectName(u"delbutton1_6")
-        self.delbutton1_6.setGeometry(QRect(330, 70, 71, 24))
-        self.delbutton1_6.setCursor(QCursor(Qt.PointingHandCursor))
-        self.delbutton1_6.setStyleSheet(u"border-color: transparent;\n"
+        self.delbutton4 = QPushButton(self.widget_9)
+        self.delbutton4.setObjectName(u"delbutton4")
+        self.delbutton4.setGeometry(QRect(330, 70, 71, 24))
+        self.delbutton4.setCursor(QCursor(Qt.PointingHandCursor))
+        self.delbutton4.setStyleSheet(u"border-color: transparent;\n"
 "")
         self.label_17 = QLabel(self.widget_9)
         self.label_17.setObjectName(u"label_17")
@@ -1404,17 +1404,17 @@ class Ui_MainWindow(object):
 "background-color: rgb(255, 255, 255);\n"
 "color: rgb(255, 255, 255);\n"
 "")
-        self.editbutton1_4 = QPushButton(self.widget_7)
-        self.editbutton1_4.setObjectName(u"editbutton1_4")
-        self.editbutton1_4.setGeometry(QRect(330, 40, 71, 24))
-        self.editbutton1_4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.editbutton1_4.setStyleSheet(u"border-color: transparent;\n"
+        self.editbutton5 = QPushButton(self.widget_7)
+        self.editbutton5.setObjectName(u"editbutton5")
+        self.editbutton5.setGeometry(QRect(330, 40, 71, 24))
+        self.editbutton5.setCursor(QCursor(Qt.PointingHandCursor))
+        self.editbutton5.setStyleSheet(u"border-color: transparent;\n"
 "")
-        self.delbutton1_4 = QPushButton(self.widget_7)
-        self.delbutton1_4.setObjectName(u"delbutton1_4")
-        self.delbutton1_4.setGeometry(QRect(330, 70, 71, 24))
-        self.delbutton1_4.setCursor(QCursor(Qt.PointingHandCursor))
-        self.delbutton1_4.setStyleSheet(u"border-color: transparent;\n"
+        self.delbutton5 = QPushButton(self.widget_7)
+        self.delbutton5.setObjectName(u"delbutton5")
+        self.delbutton5.setGeometry(QRect(330, 70, 71, 24))
+        self.delbutton5.setCursor(QCursor(Qt.PointingHandCursor))
+        self.delbutton5.setStyleSheet(u"border-color: transparent;\n"
 "")
         self.bookpage5 = QPushButton(self.widget_7)
         self.bookpage5.setObjectName(u"bookpage5")
@@ -1431,8 +1431,8 @@ class Ui_MainWindow(object):
         self.label_26.setGeometry(QRect(60, -78, 251, 281))
         self.label_26.setStyleSheet(u"border-image: url(images/images/blackboard-vector-logo.svg);")
         self.label_21.raise_()
-        self.editbutton1_4.raise_()
-        self.delbutton1_4.raise_()
+        self.editbutton5.raise_()
+        self.delbutton5.raise_()
         self.label_26.raise_()
         self.bookpage5.raise_()
 
@@ -1665,7 +1665,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1740,8 +1740,8 @@ class Ui_MainWindow(object):
         self.complete.setText(QCoreApplication.translate("MainWindow", u"\uc644\ub8cc", None))
         self.appname.setText(QCoreApplication.translate("MainWindow", u"\ubd81\ub9c8\ud06c!", None))
         self.label_19.setText("")
-        self.editbutton1_2.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
-        self.delbutton1_2.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
+        self.editbutton3.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
+        self.delbutton3.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_16.setText("")
         self.bookpage3.setText("")
         self.label_18.setText("")
@@ -1750,24 +1750,24 @@ class Ui_MainWindow(object):
         self.label_8.setText("")
         self.bookpage1.setText("")
         self.label_20.setText("")
-        self.editbutton1_3.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
-        self.delbutton1_3.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
+        self.editbutton2.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
+        self.delbutton2.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_15.setText("")
         self.bookpage2.setText("")
         self.label_22.setText("")
-        self.editbutton1_5.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
-        self.delbutton1_5.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
+        self.editbutton6.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
+        self.delbutton6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_24.setText("")
         self.label_25.setText(QCoreApplication.translate("MainWindow", u"\uc5d0\ube0c\ub9ac\ud0c0\uc784", None))
         self.bookpage6.setText("")
         self.label_23.setText("")
-        self.editbutton1_6.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
-        self.delbutton1_6.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
+        self.editbutton4.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
+        self.delbutton4.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.label_17.setText("")
         self.bookpage4.setText("")
         self.label_21.setText("")
-        self.editbutton1_4.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
-        self.delbutton1_4.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
+        self.editbutton5.setText(QCoreApplication.translate("MainWindow", u"\uc218\uc815", None))
+        self.delbutton5.setText(QCoreApplication.translate("MainWindow", u"\uc0ad\uc81c", None))
         self.bookpage5.setText("")
         self.label_26.setText("")
 #if QT_CONFIG(tooltip)
