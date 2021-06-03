@@ -899,7 +899,7 @@ font: 12pt &quot;a타이틀고딕2&quot;;</string>
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="toggleLeftBox">
+                 <widget class="QPushButton" name="logout">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                     <horstretch>0</horstretch>
@@ -1648,7 +1648,7 @@ background-color: rgb(198, 209, 224);</string>
                       <string notr="true">background-color: transparent;</string>
                      </property>
                      <property name="currentIndex">
-                      <number>2</number>
+                      <number>0</number>
                      </property>
                      <widget class="QWidget" name="home">
                       <property name="autoFillBackground">
@@ -3582,7 +3582,7 @@ background-color: rgb(255, 255, 255);</string>
   <tabstop>toggleButton</tabstop>
   <tabstop>btn_home</tabstop>
   <tabstop>btn_bookmark</tabstop>
-  <tabstop>toggleLeftBox</tabstop>
+  <tabstop>logout</tabstop>
   <tabstop>extraCloseColumnBtn</tabstop>
   <tabstop>btn_share</tabstop>
   <tabstop>btn_adjustments</tabstop>

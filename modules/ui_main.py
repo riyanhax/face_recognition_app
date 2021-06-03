@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_추가 (1) (1)YAOgdn.ui'
+## Form generated from reading UI file 'main_추가 (1) (1)NcEwDA.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.1.0
 ##
@@ -680,18 +680,18 @@ class Ui_MainWindow(object):
         self.verticalLayout_9.setSpacing(0)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
         self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.toggleLeftBox = QPushButton(self.bottomMenu)
-        self.toggleLeftBox.setObjectName(u"toggleLeftBox")
-        sizePolicy.setHeightForWidth(self.toggleLeftBox.sizePolicy().hasHeightForWidth())
-        self.toggleLeftBox.setSizePolicy(sizePolicy)
-        self.toggleLeftBox.setMinimumSize(QSize(30, 45))
-        self.toggleLeftBox.setFont(font1)
-        self.toggleLeftBox.setCursor(QCursor(Qt.PointingHandCursor))
-        self.toggleLeftBox.setLayoutDirection(Qt.LeftToRight)
-        self.toggleLeftBox.setStyleSheet(u"background-image:url(images/images/path869.png);\n"
+        self.logout = QPushButton(self.bottomMenu)
+        self.logout.setObjectName(u"logout")
+        sizePolicy.setHeightForWidth(self.logout.sizePolicy().hasHeightForWidth())
+        self.logout.setSizePolicy(sizePolicy)
+        self.logout.setMinimumSize(QSize(30, 45))
+        self.logout.setFont(font1)
+        self.logout.setCursor(QCursor(Qt.PointingHandCursor))
+        self.logout.setLayoutDirection(Qt.LeftToRight)
+        self.logout.setStyleSheet(u"background-image:url(images/images/path869.png);\n"
 "font: 12pt \"a\ud0c0\uc774\ud2c0\uace0\ub5152\";")
 
-        self.verticalLayout_9.addWidget(self.toggleLeftBox)
+        self.verticalLayout_9.addWidget(self.logout)
 
 
         self.verticalMenuLayout.addWidget(self.bottomMenu, 0, Qt.AlignBottom)
@@ -1651,8 +1651,8 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.styleSheet)
         QWidget.setTabOrder(self.toggleButton, self.btn_home)
         QWidget.setTabOrder(self.btn_home, self.btn_bookmark)
-        QWidget.setTabOrder(self.btn_bookmark, self.toggleLeftBox)
-        QWidget.setTabOrder(self.toggleLeftBox, self.extraCloseColumnBtn)
+        QWidget.setTabOrder(self.btn_bookmark, self.logout)
+        QWidget.setTabOrder(self.logout, self.extraCloseColumnBtn)
         QWidget.setTabOrder(self.extraCloseColumnBtn, self.btn_share)
         QWidget.setTabOrder(self.btn_share, self.btn_adjustments)
         QWidget.setTabOrder(self.btn_adjustments, self.btn_more)
@@ -1665,7 +1665,7 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
 
-        self.stackedWidget.setCurrentIndex(2)
+        self.stackedWidget.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1676,7 +1676,7 @@ class Ui_MainWindow(object):
         self.toggleButton.setText(QCoreApplication.translate("MainWindow", u"\uba54\ub274", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"\ud648", None))
         self.btn_bookmark.setText(QCoreApplication.translate("MainWindow", u"\ubd81\ub9c8\ud06c", None))
-        self.toggleLeftBox.setText(QCoreApplication.translate("MainWindow", u"\ub85c\uadf8\uc544\uc6c3", None))
+        self.logout.setText(QCoreApplication.translate("MainWindow", u"\ub85c\uadf8\uc544\uc6c3", None))
         self.extraLabel.setText(QCoreApplication.translate("MainWindow", u"Left Box", None))
 #if QT_CONFIG(tooltip)
         self.extraCloseColumnBtn.setToolTip(QCoreApplication.translate("MainWindow", u"Close left box", None))

@@ -50,10 +50,14 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
         global face_locations
         global face_names
+        global face_encodings
         global widgets
         global selected_name
+        global logined
+        logined = 0
         widgets = self.ui
         face_locations = []
+        face_encodings = []
         face_names = []
         selected_name = ''
         # USE CUSTOM TITLE BAR | USE AS "False" FOR MAC OR LINUX
@@ -106,12 +110,10 @@ class MainWindow(QMainWindow):
         widgets.bookpage5.clicked.connect(self.link_bookmark)
         widgets.bookpage6.clicked.connect(self.link_bookmark)
         widgets.complete_2.clicked.connect(self.edit_bookmark)
-
+        widgets.logout.clicked.connect(self.buttonClick)
+        widgets.logout.clicked.connect(self.buttonClick)
         # EXTRA LEFT BOX
-        def openCloseLeftBox():
-            UIFunctions.toggleLeftBox(self, True)
-        widgets.toggleLeftBox.clicked.connect(openCloseLeftBox)
-        widgets.extraCloseColumnBtn.clicked.connect(openCloseLeftBox)
+
 
         # EXTRA RIGHT BOX
         def openCloseRightBox():
@@ -141,6 +143,7 @@ class MainWindow(QMainWindow):
         global running
         running = True
         th = threading.Thread(target=self.run)
+        th.daemon = True
         th.start()
         print("started..")
 
@@ -159,9 +162,6 @@ class MainWindow(QMainWindow):
         global face_locations
         global face_names
         global face_encodings
-#
-        face_encodings = []
-
         process_this_frame = True
         while running:
             ret, img = cap.read()
@@ -173,7 +173,6 @@ class MainWindow(QMainWindow):
                 last_encodings = face_encodings.copy()
                 face_locations = face_recognition.face_locations(rgb_small_frame)
                 face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
-                face_names = []
                 for face_encoding in face_encodings:
                     matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
                     name = "Unknown"
@@ -217,7 +216,11 @@ class MainWindow(QMainWindow):
     def buttonClick(self):
         # GET BUTTON CLICKED
         global running
-        running = False
+        global face_locations
+        global face_names
+        global selected_name
+        global logined
+
         btn = self.sender()
         btnName = btn.objectName()
         global btnNumber
@@ -225,16 +228,27 @@ class MainWindow(QMainWindow):
             number = int(btnName[-1])
         except:
             number = 0
-
+        if btnName not in ["logout", "btn_home"]:
+            running = False
+        else:
+            running = True
+            th = threading.Thread(target=self.run)
+            th.daemon = True
+            th.start()
         # SHOW HOME PAGE
+        if btnName == "logout":
+            if logined == 0:
+                QMessageBox.about(self, "알림", "로그인 되어있지 않습니다.")
+            else:
+                face_locations = []
+                face_names = []
+                selected_name = ''
+                widgets.stackedWidget.setCurrentWidget(widgets.home)
+                QMessageBox.about(self, "알림", "로그아웃 되었습니다.")
         if btnName == "btn_home":
             widgets.stackedWidget.setCurrentWidget(widgets.home)
             UIFunctions.resetStyle(self, btnName)
             btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
-            running = True
-            th = threading.Thread(target=self.run)
-            th.start()
-            print("started..")
 
         elif btnName == "complete":
             # user add start
@@ -252,17 +266,24 @@ class MainWindow(QMainWindow):
                               ]):
                 curs.execute(ins, (widgets.adduserName.text()+str(i), '', '', url))
             conn.commit()
-
             print('데이터가 저장되었습니다.')
             widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
             UIFunctions.resetStyle(self, "btn_bookmark")
             widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
+            logined = 1
 
         elif btnName == "function_button":
             if selected_name == "Unknown":
                 widgets.stackedWidget.setCurrentWidget(widgets.add)
+            elif selected_name == "":
+                QMessageBox.about(self, "실패!", "얼굴 선택이 필요합니다.")
+                running = True
+                th = threading.Thread(target=self.run)
+                th.daemon = True
+                th.start()
             else:
                 widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
+                logined = 1
                 UIFunctions.resetStyle(self, "btn_bookmark")
                 widgets.btn_bookmark.setStyleSheet(UIFunctions.selectMenu(widgets.btn_bookmark.styleSheet()))
         elif btnName.find('edit') != -1:
@@ -271,30 +292,36 @@ class MainWindow(QMainWindow):
             widgets.stackedWidget.setCurrentWidget(widgets.pageinfo)
             UIFunctions.resetStyle(self, btnName)
         elif btnName.find('del') != -1:
-            ins = f'SELECT * FROM student WHERE name = {selected_name}{number}'
+            ins = f'SELECT * FROM student WHERE name = "{selected_name}{number}"'
             curs.execute(ins)
             rows = curs.fetchall()
-            if rows:
-                ins = f'DELETE FROM student WHERE name = {selected_name}{number}'
+            if len(rows[0][1]):
+                ins = f'UPDATE student SET ID="", PW="" WHERE name = "{selected_name}{number}"'
                 curs.execute(ins)
                 QMessageBox.about(self, "성공!", "삭제하였습니다.")
             else:
-                QMessageBox.about(self, "실패!", "존재하지 않는 정보입니다/")
+                QMessageBox.about(self, "오류!", "존재하지않는 정보입니다.")
             conn.commit()
         # SHOW WIDGETS PAGE
         elif btnName == "btn_bookmark":
             if selected_name == '':
+                running = True
+                th = threading.Thread(target=self.run)
+                th.daemon = True
+                th.start()
                 QMessageBox.about(self, "실패!", "로그인이 필요합니다.")
             else:
                 widgets.stackedWidget.setCurrentWidget(widgets.bookmark)
-            UIFunctions.resetStyle(self, btnName)
-            btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+                UIFunctions.resetStyle(self, btnName)
+                btn.setStyleSheet(UIFunctions.selectMenu(btn.styleSheet()))
+                logined = 1
 
         # AUTO LOGIN
     def link_bookmark(self):
         btn = self.sender()
         btnName = btn.objectName()
         number = int(btnName[-1])
+        print(selected_name)
             # 자동화 로그인 하고 싶은 url 입력.
         curs.execute(f'SELECT * FROM student WHERE name = "{selected_name}{number}"')
         rows = curs.fetchall()
@@ -302,6 +329,8 @@ class MainWindow(QMainWindow):
             if len(rows[0][1]):
                 for (name, ID, PW, url) in rows:
                     self.autologin(ID, PW, url)
+            else:
+                QMessageBox.about(self, "오류!", "수정 버튼을 눌러 등록해주세요!")
         except:
             QMessageBox.about(self, "오류!", "수정 버튼을 눌러 등록해주세요!")
 
@@ -439,6 +468,7 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
+
     with sqlite3.connect('school.db') as conn:
         curs = conn.cursor()
         curs.execute('''CREATE TABLE IF NOT EXISTS student
