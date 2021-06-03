@@ -152,11 +152,9 @@ class MainWindow(QMainWindow):
         known_face_names = [os.path.splitext(path)[0] for path in os.listdir("./encodings")]
         # Initialize some variables
         cap = cv2.VideoCapture(0)
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
-        width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-        height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
-        widgets.camLabel.resize(width, height)
+        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+        widgets.camLabel.resize(640, 360)
         global captured_img
         global face_locations
         global face_names
@@ -203,8 +201,10 @@ class MainWindow(QMainWindow):
                 cv2.rectangle(img, (left, bottom - 25), (right, bottom), (146, 101, 57), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_SIMPLEX
                 cv2.putText(img, name, (left + 6, bottom-5), font, 0.8, (255, 255, 255), 1)
+            img = cv2.resize(img, (640, 360), interpolation=cv2.INTER_CUBIC)
             img_converted = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             h, w, c = img.shape
+
             qImg = QImage(img_converted.data, w, h, w * c, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(qImg)
 
