@@ -165,7 +165,7 @@ class MainWindow(QMainWindow):
         process_this_frame = True
         while running:
             ret, img = cap.read()
-            small_frame = cv2.resize(img, (0, 0), fx=0.25, fy=0.25)
+            small_frame = cv2.resize(img, (0, 0), fx=0.50, fy=0.50)
             rgb_small_frame = small_frame[:, :, ::-1]
             if process_this_frame:
                 last_locations = face_locations.copy()
@@ -173,37 +173,39 @@ class MainWindow(QMainWindow):
                 last_encodings = face_encodings.copy()
                 face_locations = face_recognition.face_locations(rgb_small_frame)
                 face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
-                for face_encoding in face_encodings:
-                    matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-                    name = "Unknown"
-                    face_distances = face_recognition.face_distance(known_face_encodings, face_encoding)
-                    if face_distances.size:
-                        best_match_index = np.argmin(face_distances)
-                        if matches[best_match_index]:
-                            name = known_face_names[best_match_index]
-                    face_names.append(name)
+                if not len(face_locations):
+                    face_locations = last_locations
+                    face_names = last_names
+                    face_encodings = last_encodings
+                else:
+                    face_names = []
+                    for face_encoding, i in zip(face_encodings, range(len(face_encodings))):
+                        matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
+                        print(i, matches)
+                        if True in matches:
+                            print(-1)
+                            face_names.append(known_face_names[matches.index(True)])
+                        else:
+                            face_names.append("Unknown");
+                        print(face_names)
             process_this_frame = not process_this_frame
-            if not len(face_locations):
-                face_locations = last_locations
-                face_names = last_names
-                face_encodings = last_encodings
+
             for (top, right, bottom, left), name in zip(face_locations, face_names):
-                captured_img = img
+                captured_img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
                 # Scale back up face locations since the frame we detected in was scaled to 1/4 size
-                top *= 4
-                right *= 4
-                bottom *= 4
-                left *= 4
+                top *= 2
+                right *= 2
+                bottom *= 2
+                left *= 2
                 # Draw a box around the face
                 cv2.rectangle(img, (left, top), (right, bottom), (146, 101, 57), 2)
                 # Draw a label with a name below the face
                 cv2.rectangle(img, (left, bottom - 25), (right, bottom), (146, 101, 57), cv2.FILLED)
                 font = cv2.FONT_HERSHEY_SIMPLEX
                 cv2.putText(img, name, (left + 6, bottom-5), font, 0.8, (255, 255, 255), 1)
-            img = cv2.resize(img, (640, 360), interpolation=cv2.INTER_CUBIC)
+            img = cv2.resize(img, (0, 0), fx=0.5, fy=0.5)
             img_converted = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             h, w, c = img.shape
-
             qImg = QImage(img_converted.data, w, h, w * c, QImage.Format_RGB888)
             pixmap = QPixmap.fromImage(qImg)
 
@@ -445,10 +447,10 @@ class MainWindow(QMainWindow):
             x = event.x() - widgets.camLabel.x() - widgets.leftMenuBg.width()
             y = event.y() - widgets.camLabel.y() - widgets.contentTopBg.height()
             for (top, right, bottom, left), name, encoding in zip(face_locations, face_names, face_encodings):
-                top *= 4
-                right *= 4
-                bottom *= 4
-                left *= 4
+                # top *= 2
+                # right *= 2
+                # bottom *= 2
+                # left *= 2
                 if (right >= x >= left) and (bottom >= y >= top):
                     print(name)
                     selected_name = name
